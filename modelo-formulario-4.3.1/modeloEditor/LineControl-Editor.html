@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="itamar">
+  <title>Exemplo </title>
+
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="css/editor.css" type="text/css" rel="stylesheet"/>
+  <link href="css/form-validation.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+  
+  <div class="container">
+
+
+        <div class="row p-3">
+          <div class="col-md-12 order-md-1">
+            <h4 class="mb-3">Formulário Modelo para Tela de Termo</h4>
+    
+            <form class="needs-validation" novalidate>
+    
+              <div class="row">
+    
+                <div class="col-md-12 mb-3">
+                  <label for="nomedocumento">Descrição do texto:</label>
+                  <input type="text" class="form-control" id="nomedocumento" placeholder="" value="" required>
+                  <div class="invalid-feedback">
+                    O nome é obrigatório.
+                  </div>
+                </div>
+    
+                <div class="col-md-12 mb-3">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="same-address" required>
+                    <label class="custom-control-label" for="same-address">Obrigatorio impressão de termo</label>
+                  </div>
+                </div>
+    
+              </div>
+    
+    
+              <div class="row">
+    
+    
+                  <div class="col-md-12 mb-3">
+                     <textarea class="form-control textarea"  placeholder="Adicionar um texto..." id="txtEditor" required></textarea>
+                     <div class="invalid-feedback">
+                        O Texto é obrigatório.
+                      </div>
+                   </div>
+                        
+    
+              </div>
+    
+              <button class="btn btn-primary btn-lg" id="btnGravar" type="submit">
+                  Salvar
+              </button>
+    
+            </form>
+    
+          </div>
+        </div>
+    
+    
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/form-validation.js"></script>
+      <script src="js/editor.js"></script>
+
+
+      <script>
+            $(document).ready(function() {
+                $("#txtEditor").Editor(
+                {
+                    'status_bar':false,
+                    'insert_img':false,
+                    'insert_link':false,
+                    'unlink':false,
+                    'source':false,
+                    'strikeout':false,
+                    'fonts':false,
+                    'styles':false,
+                    'rm_format':false,
+                    'fonteffects':false,
+                    'texteffects':false,
+                    'textformats':false,
+                    'insertoptions' : false,
+                    'extraeffects' : false,
+                    'advancedoptions' : false,
+                    'screeneffects':false,
+                    'splchars':false,
+                    'font_size':false,
+                    'togglescreen':false,
+                    'select_all':false,
+                    'splchars':false,
+                    'insert_table':false,
+                    'hr_line':false,
+                    'block_quote':false,
+
+
+                 }
+
+                );
+            });
+        </script>
+
+
+</body>
+
+</html>

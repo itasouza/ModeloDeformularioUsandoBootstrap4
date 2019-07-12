@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <title>Exemplo </title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+  <link href="css/form-customizado.css" rel="stylesheet">
+  <link href="css/form-validation.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
+</head>
+
+
+<body class="bg-light">
+
+
+
+  <div class="container">
+
+
+
+<!--Navbar -->
+
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
+    <a class="navbar-brand" href="#">
+          <img src="http://placehold.it/150x50?text=Logo" alt="">
+        </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Menu de Opções
+        </a>
+        <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
+          <a class="dropdown-item" href="#">Cadastro de Produto</a>
+          <a class="dropdown-item" href="#">Cadastro de Transportadora</a>
+          <a class="dropdown-item" href="#">Cadastro de Fornecedor</a>
+          <a class="dropdown-item" href="#">Cadastro de Cliente</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item avatar dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" width="50" height="50" class="rounded-circle z-depth-0"
+            alt="avatar image">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-secondary"
+          aria-labelledby="navbarDropdownMenuLink-55">
+          <a class="dropdown-item" href="#">Cadastro de Empresa</a>
+          <a class="dropdown-item" href="#">Cadastro de Perfil</a>
+          <a class="dropdown-item" href="#">Cadastro de Usuário</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--/.Navbar -->
+
+
+
+    <div class="row p-3">
+      <div class="col-md-12 order-md-1">
+        <h4 class="mb-3">Formulário padrão</h4>
+
+        <form class="needs-validation" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Primeiro nome</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                O primeiro nome válido é obrigatório.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Último nome</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                O sobrenome válido é obrigatório.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="username">Nome de usuário</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input type="text" class="form-control" id="username" placeholder="Nome usuário" required>
+              <div class="invalid-feedback" style="width: 100%;">
+                Seu nome de usuário é obrigatório.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email">Email <span class="text-muted">(opcional)</span></label>
+            <input type="email" class="form-control" id="email" placeholder="seuemail@example.com">
+            <div class="invalid-feedback">
+              Por favor, insira um endereço de e-mail válido para atualizações de envio.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="address">Endereço</label>
+            <input type="text" class="form-control" id="address" placeholder="Rua Brasil 123" required>
+            <div class="invalid-feedback">
+              Por favor insira seu endereço de entrega.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="address2">Endereço 2 <span class="text-muted">(opcional)</span></label>
+            <input type="text" class="form-control" id="address2" placeholder="Apartamento ou suite">
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="country">País</label>
+              <select class="custom-select d-block w-100" id="country" required>
+              <option value="">Escolha...</option>
+              <option>Brasil</option>
+            </select>
+              <div class="invalid-feedback">
+                Por favor, selecione um país válido.
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="state">Estado</label>
+              <select class="custom-select d-block w-100" id="state" required>
+              <option value="">Escolha...</option>
+                <option>Paraíba (PB)</option>
+                <option>Paraná (PR)</option>
+                <option>Pernambuco (PE)</option>
+                <option>Piauí (PI)</option>
+                <option>Rio de Janeiro (RJ)</option>
+                <option>Rio Grande do Norte (RN)</option>
+                <option>Rio Grande do Sul (RS)</option>
+                <option>Rondônia (RO)</option>
+                <option>Roraima (RR)</option>
+                <option>Santa Catarina (SC)</option>
+                <option>São Paulo (SP)</option>
+                <option>Sergipe (SE)</option>
+                <option>Tocantins (TO)</option>
+            </select>
+              <div class="invalid-feedback">
+                Por favor, forneça um estado válido.
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <label for="zip">CEP</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+                CEP requerido.
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="same-address">
+            <label class="custom-control-label" for="same-address">O endereço de envio é o mesmo que o meu endereço de faturamento</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="save-info">
+            <label class="custom-control-label" for="save-info">Guarde esta informação para a próxima vez</label>
+          </div>
+          <hr class="mb-4">
+
+          <h4 class="mb-3">Payment</h4>
+
+          <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+              <label class="custom-control-label" for="credit">Cartão de crédito</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="debit">Cartão de débito</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="paypal">PayPal</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="cc-name">Nome no cartão</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <small class="text-muted">Nome completo conforme exibido no cartão</small>
+              <div class="invalid-feedback">
+                Nome no cartão é obrigatório
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="cc-number">Número do Cartão de Crédito</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <div class="invalid-feedback">
+                O número do cartão de crédito é obrigatório
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <label for="cc-expiration">Expiração</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <div class="invalid-feedback">
+                Data de expiração exigida
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="cc-cvv">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <div class="invalid-feedback">
+                Código de segurança requerido
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4">
+
+          <a class="btn btn-warning mb-1  btn-block btnPersonalizado" href="https://www.google.com.br/" id="btnRetornar" 
+          role="button">Retornar <i class="fas fa-angle-double-left "></i></a>
+
+          <button class="btn btn-primary mb-1" id="btnGravar" type="submit">
+              Gravar dados <i class="fas fa-save"></i> 
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2017-2019 Formulário Padrão</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacidade</a></li>
+        <li class="list-inline-item"><a href="#">Termos</a></li>
+        <li class="list-inline-item"><a href="#">Apoio, suporte</a></li>
+      </ul>
+    </footer>
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')
+  </script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/form-validation.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+  <script src="js/form-dataTables.js"></script>
+  <script src="js/form-ajustabtn.js"></script>
+
+  <script>
+   
+
+
+    $(window).resize(function() {
+
+        var windowWidth = window.innerWidth;
+              if(windowWidth > 360)
+                  $('.btnPersonalizado').removeClass("btn-block")
+              else
+                $('.btnPersonalizado').addClass("btn-block");
+        });
+
+     </script>
+
+
+</body>
+
+</html>

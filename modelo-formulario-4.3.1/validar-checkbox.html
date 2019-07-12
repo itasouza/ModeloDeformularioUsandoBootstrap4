@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <title>Exemplo </title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+  <link href="css/form-customizado.css" rel="stylesheet">
+  <link href="css/form-validation.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  
+
+
+
+       <script type="text/javascript">
+
+            $(document).ready(function() {
+
+                var reserva = $('input[name="reservarjanela"]:checked').toArray().map(function (check) {
+                                    this.$ReservarJanela = $(check).val()
+                                    alert($ReservarJanela);
+                                });
+              
+
+            });
+
+
+              var ReservarJanela = null;
+              //------------------------------------------------
+              function verificarReserva() {
+                  alert("Verificando a reserva de janela!");
+                  var reserva = $('input[name="reservarjanela"]:checked').toArray().map(function (check) {
+                      this.$ReservarJanela = $(check).val()
+                      alert("Escolhido : " + $ReservarJanela);
+
+                      if (this.$ReservarJanela == "simreservar") {
+                          alert('Sim');
+                          $("#custId").prop("type", "text");
+                          $("#TipoDeVeiculo_Iid").prop("disabled", true);
+                          $("#custId").prop("disabled", true);
+                          //não vai escolher cliente
+                      } else {
+                          //vai escolher dados
+                          $("#custId").prop("type", "text");
+                          $("#TipoDeVeiculo_Iid").prop("disabled", false);
+                          $("#custId").prop("disabled", false);
+                      }
+
+                  });
+              };
+
+       </script>
+
+
+
+
+</head>
+
+
+<body class="bg-light">
+
+
+
+
+
+     <div class="container">
+
+
+
+
+             <div class="form-group">
+                    <div class="container">
+                        <div class="form-check">
+                            <input class="form-check-input" onclick="verificarReserva()" type="radio" name="reservarjanela" id="reservar01" value="simreservar" checked>
+                            <label class="form-check-label"> Reservar Janela</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" onclick="verificarReserva()" name="reservarjanela" id="reservar02" checked value="naoreservar">
+                            <label class="form-check-label">Não Reservar Janela</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label id="TipoDeVeiculo" class="control-label">Tipo de Veículo</label>
+                    <div class="form-group">
+                        <input id="TipoDeVeiculo_Iid" name="TipoDeVeiculo_Iid"  class="form-control" />
+
+                        <input type="hidden" id="custId" name="custId" class="form-control" value="3487">
+                    </div>
+                </div>
+
+
+
+
+
+
+    </div>
+
+
+  </div>
+
+  
+  <script>
+    window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')
+  </script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
