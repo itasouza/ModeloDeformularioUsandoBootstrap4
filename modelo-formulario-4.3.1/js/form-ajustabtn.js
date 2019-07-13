@@ -2,9 +2,9 @@ function addClasses() {
     $(".bg-light").each(function () {
         var scre = $("body").width();
         if (scre <= 768) {
-            $("#btnGravar").addClass("btn-block");
+            $(".btnPersonalizado").addClass("btn-block");
         } else {
-            $("#btnGravar").removeClass("btn-block");
+            $(".btnPersonalizado").removeClass("btn-block");
         }
 
     });
