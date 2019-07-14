@@ -35,7 +35,11 @@ $(document).ready(function () {
         placeholder: "Selecione um registro",
         theme: "bootstrap",
         width: null,
-        containerCssClass: ':all:'
+        containerCssClass: ':all:',
+        language: "pt-BR",
+        inputTooShort: function () {
+            return "Você deve inserir mais caracteres ...";
+        }
     });
 
    
@@ -80,8 +84,8 @@ function QtdCaracteresCampo() {
 }
 
 //limpar select2
-function LimparSelect2(){
-    $('.select2-single').val([]).trigger('change');
+function LimparSelect2(idselect){
+    $(idselect).val([]).trigger('change');
 }
 
 //personalizar o botão para o tamanho da janela
