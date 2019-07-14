@@ -14,12 +14,13 @@
   <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
   <!--Bootstrap datepicker-->
   <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
-
-  <link href="css/form-customizado.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
+  <link href="css/form-customizado.css" rel="stylesheet">
+  
 <!--Bootstrap select2-->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/select2-bootstrap.css">
 
 
 </head>
@@ -118,7 +119,7 @@
 
 
             <div class="col-md-3 mb-3">
-              <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
+              <a href="#" data-toggle="popover" title="Sobre o nome do usuário" data-content="Aqui o conteúdo sobre o campo 
                     explicando o seu uso,explicando o seu uso
                     explicando o seu uso,explicando o seu uso">
                 <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
@@ -140,7 +141,7 @@
             </div>
 
             <div class="col-md-3 mb-3">
-              <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
+              <a href="#" data-toggle="popover" title="Sobre o cpf do usuário" data-content="Aqui o conteúdo sobre o campo 
                     explicando o seu uso,explicando o seu uso
                     explicando o seu uso,explicando o seu uso">
                 <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
@@ -153,7 +154,7 @@
             </div>
 
             <div class="col-md-3 mb-3">
-              <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
+              <a href="#" data-toggle="popover" title="Sobre o CNPJ da empresa" data-content="Aqui o conteúdo sobre o campo 
                     explicando o seu uso,explicando o seu uso
                     explicando o seu uso,explicando o seu uso">
                 <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
@@ -187,20 +188,26 @@
 
 
             <div class="col-md-4 mb-3">
+               <a href="#"  onclick="LimparSelect2()"
+                 data-toggle="tooltip" title="Limpar a busca!">
+                 <i class="fas fa-recycle" style="font-size:20px; text-decoration:none; color: red;"></i>
+               </a>
+
+
               <label for="continente">Continente</label>
-              <select class="form-control dadosselect" name="state" required>
-                	<option value="AK">Alaska</option>
-                  <option value="HI" disabled="disabled">Hawaii</option>
-                 	<option value="CA">California</option>
-                  <option value="NV">Nevada</option>
-                  <option value="OR">Oregon</option>
-                  <option value="WA">Washington</option>
-              </select>
+              <select class="form-control select2-single" name="state" id="continente" tabindex="-1" aria-hidden="true" required>
+                              <option></option>
+                              <option value="AK">Alaska</option>
+                              <option value="HI" disabled="disabled">Hawaii</option>
+                              <option value="CA">California</option>
+                              <option value="NV">Nevada</option>
+                              <option value="OR">Oregon</option>
+                              <option value="WA">Washington</option>
+                </select>
               <div class="invalid-feedback">
                 Por favor selecione o continente.
               </div>
             </div>
-
 
 
           </div>
@@ -209,10 +216,11 @@
           <div class="row">
 
             <div class="col-md-2 mb-3">
-              <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
+              <a href="#" data-toggle="popover" title="Buscar produto usando o código" data-content="Aqui o conteúdo sobre o campo 
                     explicando o seu uso,explicando o seu uso
                     explicando o seu uso,explicando o seu uso">
-                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
+                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i>
+            </a>
 
                 <label for="codigoproduto">Código</label>
                 <input type="text" class="form-control" id="codigoproduto" placeholder="..." required>
@@ -489,7 +497,9 @@
   <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
   <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
   <script type="text/javascript" src="js/jquery.mask.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+
+
+  <script src="js/select2.full.js.download"></script>
 
 
   <script src="js/form-dataTables.js"></script>
@@ -514,5 +524,5 @@ https://www.sport-histoire.fr/pt/Geografia/Paises_por_ordem_alfabetica.php
 select2 para consulta de registros 
 https://medium.com/@erikwitkowski/caixas-de-sele%C3%A7%C3%A3o-otimizadas-com-jquery-select2-no-asp-net-1825fa873927
 Janela Modal para cadastro na mesma página
-
+https://fontawesome.com/icons
  -->

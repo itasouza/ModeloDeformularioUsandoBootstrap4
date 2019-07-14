@@ -14,8 +14,10 @@ $(document).ready(function () {
     });
 
     $(function () {
-        $('[data-toggle="popover"]').popover()
+        $('[data-toggle="popover"]').popover();
+        $('[data-toggle="tooltip"]').tooltip(); 
     })
+
 
     // Adicionar classes ao carregar o documento
     addClasses();
@@ -28,9 +30,15 @@ $(document).ready(function () {
     });
 
  
-    $('.dadosselect').select2({
-         theme: "bootstrap"
+
+    $(".select2-single, .select2-multiple").select2({
+        placeholder: "Selecione um registro",
+        theme: "bootstrap",
+        width: null,
+        containerCssClass: ':all:'
     });
+
+   
 
 
 });
@@ -69,6 +77,11 @@ function QtdCaracteresCampo() {
     }
     alert("Quantidade de Caracteres ultrapassou o limite permitido");
     return false;
+}
+
+//limpar select2
+function LimparSelect2(){
+    $('.select2-single').val([]).trigger('change');
 }
 
 //personalizar o botão para o tamanho da janela
