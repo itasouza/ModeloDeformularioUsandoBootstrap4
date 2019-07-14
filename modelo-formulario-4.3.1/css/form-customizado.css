@@ -36,3 +36,11 @@
 .cor-contador{
    color: #28a745; 
 }
+
+.container {
+    max-width: 960px;
+}
+
+.lh-condensed {
+    line-height: 1.25;
+}

@@ -1,13 +1,13 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// Exemplo de JavaScript inicial para desabilitar submissões de formulários se houver campos inválidos
 (function () {
   'use strict'
 
    
   window.addEventListener('load', function () {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+   // Busque todos os formulários nos quais queremos aplicar estilos de validação personalizados do Bootstrap
     var forms = document.getElementsByClassName('needs-validation')
 
-    // Loop over them and prevent submission
+    // Faça um loop sobre eles e impeça a submissão
     Array.prototype.filter.call(forms, function (form) {
       form.addEventListener('submit', function (event) {
         if (form.checkValidity() === false) {

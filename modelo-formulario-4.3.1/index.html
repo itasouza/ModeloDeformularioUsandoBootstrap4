@@ -16,9 +16,10 @@
   <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 
   <link href="css/form-customizado.css" rel="stylesheet">
-  <link href="css/form-validation.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+<!--Bootstrap select2-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
 
 
 </head>
@@ -87,11 +88,10 @@
           <div class="row">
 
             <div class="col-md-6 mb-3">
-              <a class="" href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
+              <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
                     explicando o seu uso,explicando o seu uso
                     explicando o seu uso,explicando o seu uso">
-                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i>
-                </a>
+                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
 
                 <label for="firstName">Primeiro nome</label>
                 <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
@@ -101,26 +101,36 @@
             </div>
 
             <div class="col-md-6 mb-3">
-              <label for="lastName">Último nome</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                O sobrenome válido é obrigatório.
-              </div>
+              <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
+                    explicando o seu uso,explicando o seu uso
+                    explicando o seu uso,explicando o seu uso">
+                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
+
+                <label for="lastName">Último nome</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  O sobrenome válido é obrigatório.
+                </div>
             </div>
           </div>
 
           <div class="row">
 
 
-            <div class="col-md-6 mb-3">
-              <label for="username">Nome de usuário</label>
-              <input type="text" class="form-control" id="username" placeholder="Nome usuário" required>
-              <div class="invalid-feedback" style="width: 100%;">
-                Seu nome de usuário é obrigatório.
-              </div>
+            <div class="col-md-3 mb-3">
+              <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
+                    explicando o seu uso,explicando o seu uso
+                    explicando o seu uso,explicando o seu uso">
+                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
+
+                <label for="username">Nome de usuário</label>
+                <input type="text" class="form-control" id="username" placeholder="Nome usuário" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Seu nome de usuário é obrigatório.
+                </div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-3 mb-3">
               <label for="datanascimento">Data de Nascimento*</label>
               <input type="text" name="datanascimento" class="form-control datepicker" tabindex="4" id="datanascimento" required placeholder="Adicionar data"
                 autocomplete="off">
@@ -129,10 +139,94 @@
                 </div>
             </div>
 
+            <div class="col-md-3 mb-3">
+              <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
+                    explicando o seu uso,explicando o seu uso
+                    explicando o seu uso,explicando o seu uso">
+                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
+
+                <label for="cpf">CPF do usuário</label>
+                <input type="text" class="form-control cpf" id="cpf" placeholder="..." required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  O CPF de usuário é obrigatório.
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
+                    explicando o seu uso,explicando o seu uso
+                    explicando o seu uso,explicando o seu uso">
+                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
+
+                <label for="cnpj">CNPJ da Empresa</label>
+                <input type="text" class="form-control cnpj" id="cnpj" placeholder="..." required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  O CNPJ da empresa é obrigatório.
+                </div>
+            </div>
+
           </div>
 
           <div class="row">
-            <div class="col-md-6 mb-3">
+
+            <div class="col-md-4 mb-3">
+              <label for="paisselecao">Pais</label>
+              <input type="text" class="form-control" id="paisselecao" placeholder="...." required>
+              <div class="invalid-feedback">
+                Por favor selecione o pais.
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="capital">Capital</label>
+              <input type="text" class="form-control" id="capital" placeholder="...." required>
+              <div class="invalid-feedback">
+                Por favor selecione a capital.
+              </div>
+            </div>
+
+
+            <div class="col-md-4 mb-3">
+              <label for="continente">Continente</label>
+              <select class="form-control dadosselect" name="state" required>
+                	<option value="AK">Alaska</option>
+                  <option value="HI" disabled="disabled">Hawaii</option>
+                 	<option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA">Washington</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecione o continente.
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+          <div class="row">
+
+            <div class="col-md-2 mb-3">
+              <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
+                    explicando o seu uso,explicando o seu uso
+                    explicando o seu uso,explicando o seu uso">
+                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
+
+                <label for="codigoproduto">Código</label>
+                <input type="text" class="form-control" id="codigoproduto" placeholder="..." required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Informe o código para pesquisa.
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="codigoproduto">Nome Produto</label>
+              <input type="text" class="form-control" id="nomeproduto" disabled required>
+            </div>
+
+            <div class="col-md-3 mb-3">
               <label for="email">Email <span class="text-muted">(opcional)</span></label>
               <input type="email" class="form-control" id="email" placeholder="seuemail@example.com">
               <div class="invalid-feedback">
@@ -140,7 +234,7 @@
               </div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-3 mb-3">
               <label for="address">Endereço</label>
               <input type="text" class="form-control" id="address" placeholder="Rua Brasil 123" required>
               <div class="invalid-feedback">
@@ -149,14 +243,16 @@
             </div>
           </div>
 
+
+
           <div class="row">
             <div class="col-md-4 mb-3">
               <label for="complemento">Complemento<span class="text-muted">(opcional)</span></label>
-              <input type="text" class="form-control" id="complemento" placeholder="Apartamento ou suite" required>
+              <input type="text" class="form-control" id="complemento" placeholder="Apartamento ou suite">
             </div>
 
             <div class="col-md-4 mb-3">
-              <label for="telefone">Telefone <span class="text-muted">(opcional)</span></label>
+              <label for="telefone">Telefone</label>
               <input type="text" class="form-control telefone" id="telefone" placeholder="Telefone" required>
               <div class="invalid-feedback">
                 Por favor informe o telefone
@@ -369,9 +465,10 @@
         </button>
         </div>
         <div class="modal-body">
-          <p>Glass Animals are an English indie rock band from Oxford consisting of members Dave 
-            Bayley (lead vocals, guitar), Drew MacFarlane (guitar, keys, backing vocals),
-             Edmund Irwin-Singer (bass, keys, backing vocals), and Joe Seaward (drums).</p>
+          <p>Glass Animals are an English indie rock band from Oxford consisting of members Dave Bayley (lead vocals, guitar),
+            Drew MacFarlane (guitar, keys, backing vocals), Edmund Irwin-Singer (bass, keys, backing vocals), and Joe Seaward
+            (drums).
+          </p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-warning" data-dismiss="modal">Retornar <i class="fas fa-angle-double-left"></i></button>
@@ -385,20 +482,21 @@
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script>
-    window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')
-  </script>
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/form-validation.js"></script>
+
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
   <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
   <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
   <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+
 
   <script src="js/form-dataTables.js"></script>
-  <script src="js/form-ajustabtn.js"></script>
   <script src="js/form-dados.js"></script>
+  <script src="js/form-validation.js"></script>
+
+
 
 </body>
 
@@ -414,6 +512,7 @@ selecte para envio de arquivos
 combobox dependente 
 https://www.sport-histoire.fr/pt/Geografia/Paises_por_ordem_alfabetica.php
 select2 para consulta de registros 
+https://medium.com/@erikwitkowski/caixas-de-sele%C3%A7%C3%A3o-otimizadas-com-jquery-select2-no-asp-net-1825fa873927
 Janela Modal para cadastro na mesma página
 
  -->

@@ -4,6 +4,8 @@ $(document).ready(function () {
     $('.campovalor').mask('#.##0,00', { reverse: true });
     $('.telefone').mask('(00)00000-0000');
     $('.cep').mask('00000-000');
+    $('.cpf').mask('000.000.000-00', { reverse: true });
+    $('.cnpj').mask('00.000.000/0000-00', { reverse: true });
 
     // Adicione o seguinte código se você quiser que o nome do arquivo apareça em select
     $(".custom-file-input").on("change", function () {
@@ -15,8 +17,25 @@ $(document).ready(function () {
         $('[data-toggle="popover"]').popover()
     })
 
+    // Adicionar classes ao carregar o documento
+    addClasses();
+    addClassesListagem();
+
+    $(window).resize(function () {
+        // Adicionar sempre que a tela for redimensionada
+        addClasses();
+        addClassesListagem();
+    });
+
+ 
+    $('.dadosselect').select2({
+         theme: "bootstrap"
+    });
+
+
 });
 
+//configuração do datepicker
 function definirDatePicker() {
     $.fn.datepicker.dates['pt-BR'] = {
         days: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
@@ -37,6 +56,7 @@ function definirDatePicker() {
 
 }
 
+//contagem de caracteres 
 function QtdCaracteresCampo() {
     var txt = document.getElementById("comentario").value;
     var n = txt.length;
@@ -49,6 +69,34 @@ function QtdCaracteresCampo() {
     }
     alert("Quantidade de Caracteres ultrapassou o limite permitido");
     return false;
+}
+
+//personalizar o botão para o tamanho da janela
+function addClasses() {
+    $(".bg-light").each(function () {
+        var scre = $("body").width();
+        if (scre <= 768) {
+            $(".btnPersonalizado").addClass("btn-block");
+        } else {
+            $(".btnPersonalizado").removeClass("btn-block");
+        }
+
+    });
+}
+
+//personalizar a listagem de dados
+function addClassesListagem(){
+      $(".bg-light").each(function () {
+        var scre = $("body").width();
+        if (scre >= 768) {
+            $("#listagem").addClass("p-5");
+            $("#listagem").removeClass("p-3");
+        } else {
+            $("#listagem").removeClass("p-5");
+            $("#listagem").addClass("p-3");
+        }
+
+    });  
 }
 
 
