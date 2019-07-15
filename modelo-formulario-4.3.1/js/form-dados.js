@@ -24,9 +24,10 @@ $(document).ready(function () {
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
     });
 
+    //habilitar popover e tooltip
     $(function () {
         $('[data-toggle="popover"]').popover();
-        $('[data-toggle="tooltip"]').tooltip(); 
+        $('[data-toggle="tooltip"]').tooltip();
     })
 
 
@@ -40,7 +41,7 @@ $(document).ready(function () {
         addClassesListagem();
     });
 
- 
+
     //usado no select2
     $(".select2-single, .select2-multiple").select2({
         placeholder: "Selecione um registro",
@@ -55,6 +56,8 @@ $(document).ready(function () {
 
 
 });
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //configuração do datepicker
 function definirDatePicker() {
@@ -77,6 +80,8 @@ function definirDatePicker() {
 
 }
 
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 //contagem de caracteres 
 function QtdCaracteresCampo() {
     var txt = document.getElementById("comentario").value;
@@ -92,10 +97,15 @@ function QtdCaracteresCampo() {
     return false;
 }
 
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 //limpar select2
-function LimparSelect2(idselect){
+function LimparSelect2(idselect) {
     $(idselect).val([]).trigger('change');
 }
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //personalizar o botão para o tamanho da janela
 function addClasses() {
@@ -110,9 +120,12 @@ function addClasses() {
     });
 }
 
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 //personalizar a listagem de dados
-function addClassesListagem(){
-      $(".bg-light").each(function () {
+function addClassesListagem() {
+    $(".bg-light").each(function () {
         var scre = $("body").width();
         if (scre >= 768) {
             $("#listagem").addClass("p-5");
@@ -122,18 +135,21 @@ function addClassesListagem(){
             $("#listagem").addClass("p-3");
         }
 
-    });  
+    });
 }
 
-//jscolor para selecione cor na página
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+//jscolor para selecionar cor na página
 function update(jscolor) {
     document.getElementById('receberCor').style.backgroundColor = '#' + jscolor
 }
 
 
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //daterangepicker para seleção de intervalo de data
-$(function() {
+$(function () {
     $('input[name="daterange"]').daterangepicker({
         "locale": {
             "format": "DD/MM/YYYY",
@@ -169,15 +185,17 @@ $(function() {
             ],
             "firstDay": 1
         },
-      opens: 'left',
+        opens: 'left',
 
-    }, function(start, end, label) {
-      console.log("Uma nova seleção de data foi feita: " + start.format('DD-MM-YYYY') + ' to ' + end.format('DD-MM-YYYY'));
+    }, function (start, end, label) {
+        console.log("Uma nova seleção de data foi feita: " + start.format('DD-MM-YYYY') + ' to ' + end.format('DD-MM-YYYY'));
     });
 
 });
 
 //limpar campo intervalo de data
-$('#intervalodata').on('cancel.daterangepicker', function(ev, picker) {
+$('#intervalodata').on('cancel.daterangepicker', function (ev, picker) {
     $('#intervalodata').val('');
- });
+});
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
