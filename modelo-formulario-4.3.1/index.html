@@ -283,7 +283,7 @@
             </div>
 
             <div class="col-md-4 mb-3">
-              <label for="codigoproduto">Nome Produto</label>
+              <label for="codigoproduto">Nome Produto localizado</label>
               <input type="text" class="form-control" id="nomeproduto" disabled required>
             </div>
 
@@ -385,41 +385,11 @@
 
 
           <div class="row">
-
-
-            <div class="col-md-5 mb-3">
-              <label for="country">País</label>
-              <select class="custom-select d-block w-100" id="country" required>
-              <option value="">Escolha...</option>
-              <option>Brasil</option>
-                <option>Afeganistão</option>	
-                <option>África do Sul</option>	
-                <option>Albânia</option>	
-                <option>Alemanha</option>	
-                <option>Andorra</option>
-                <option>Angola</option>	
-                <option>Antiga e Barbuda</option>	
-                <option>Arábia Saudita</option>
-                <option>Argélia</option>	
-                <option>Argentina</option>	
-                <option>Arménia</option>	
-                <option>Austrália</option>	
-                <option>Áustria</option>	
-                <option>Azerbaijão</option>	
-                <option>Bahamas</option>	
-                <option>Bangladexe</option>	
-                <option>Barbados</option>	
-                <option>Barém</option>
-            </select>
-              <div class="invalid-feedback">
-                Por favor, selecione um país válido.
-              </div>
-            </div>
-
+          
             <div class="col-md-4 mb-3">
-              <label for="state">Estado</label>
-              <select class="custom-select d-block w-100" id="state" required>
-              <option value="">Escolha...</option>
+              <label for="estado">Estado</label>
+              <select class="custom-select d-block w-100 " id="estado" required>
+                <option value="">Escolha...</option>
                 <option>Paraíba (PB)</option>
                 <option>Paraná (PR)</option>
                 <option>Pernambuco (PE)</option>
@@ -433,20 +403,54 @@
                 <option>São Paulo (SP)</option>
                 <option>Sergipe (SE)</option>
                 <option>Tocantins (TO)</option>
-            </select>
+              </select>
               <div class="invalid-feedback">
-                Por favor, forneça um estado válido.
+                Por favor, forneça um estado.
               </div>
             </div>
-
-            <div class="col-md-3 mb-3">
+          
+            <div class="col-md-4 mb-3">
+              <label for="cidade">Cidade</label>
+              <select class="custom-select d-block w-100" id="cidade" required>
+                <option value="">Escolha...</option>
+                <option>Brasil</option>
+                <option>Afeganistão</option>
+                <option>África do Sul</option>
+                <option>Albânia</option>
+                <option>Alemanha</option>
+                <option>Andorra</option>
+                <option>Angola</option>
+                <option>Antiga e Barbuda</option>
+                <option>Arábia Saudita</option>
+                <option>Argélia</option>
+                <option>Argentina</option>
+                <option>Arménia</option>
+                <option>Austrália</option>
+                <option>Áustria</option>
+                <option>Azerbaijão</option>
+                <option>Bahamas</option>
+                <option>Bangladexe</option>
+                <option>Barbados</option>
+                <option>Barém</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor, selecione uma cidade.
+              </div>
+            </div>
+          
+          
+          
+            <div class="col-md-4 mb-3">
               <label for="zip">CEP</label>
               <input type="text" class="form-control cep" id="zip" placeholder="" required>
               <div class="invalid-feedback">
                 CEP requerido.
               </div>
             </div>
+          
           </div>
+
+
           <hr class="mb-4">
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="same-address">
@@ -627,6 +631,10 @@ validação de dados de cartão de crédito = https://tableless.com.br/plugins-j
 
 VISUALIZADOR DE IMAGEM
 
+https://www.devmedia.com.br/recorte-de-imagem-com-jcrop-e-asp-net-mvc/33011
+http://rafaelcouto.com.br/redimensionar-imagem-antes-de-enviar-com-javascript/
+https://blog.neweb.co/pt/melhores-tutoriais-plugins-jQuery-imagem-da-colheita/
+https://codecanyon.net/item/slim-image-cropper-responsive-uploading-and-ratio-cropping-plugin/16364167?ref=pqina
 
 
 https://www.sport-histoire.fr/pt/Geografia/Paises_por_ordem_alfabetica.php
