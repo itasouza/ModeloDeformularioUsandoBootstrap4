@@ -1,11 +1,22 @@
 $(document).ready(function () {
 
     definirDatePicker();
+
+    //usando jquery.mask para markara de campos
     $('.campovalor').mask('#.##0,00', { reverse: true });
     $('.telefone').mask('(00)00000-0000');
     $('.cep').mask('00000-000');
     $('.cpf').mask('000.000.000-00', { reverse: true });
     $('.cnpj').mask('00.000.000/0000-00', { reverse: true });
+
+
+    //usando jquery.payment para markara de cartão de crédito
+    $('input.numero-cartao').payment('formatCardNumber');
+    $('input.expiracao-cartao').payment('formatCardExpiry');
+    $('input.codigo-cartao').payment('formatCardCVC');
+    $('input.numerico').payment('restrictNumeric');
+
+
 
     // Adicione o seguinte código se você quiser que o nome do arquivo apareça em select
     $(".custom-file-input").on("change", function () {
@@ -30,7 +41,7 @@ $(document).ready(function () {
     });
 
  
-
+    //usado no select2
     $(".select2-single, .select2-multiple").select2({
         placeholder: "Selecione um registro",
         theme: "bootstrap",
@@ -41,8 +52,6 @@ $(document).ready(function () {
             return "Você deve inserir mais caracteres ...";
         }
     });
-
-   
 
 
 });
@@ -116,6 +125,59 @@ function addClassesListagem(){
     });  
 }
 
+//jscolor para selecione cor na página
+function update(jscolor) {
+    document.getElementById('receberCor').style.backgroundColor = '#' + jscolor
+}
 
 
 
+//daterangepicker para seleção de intervalo de data
+$(function() {
+    $('input[name="daterange"]').daterangepicker({
+        "locale": {
+            "format": "DD/MM/YYYY",
+            "separator": " - ",
+            "applyLabel": "Gravar",
+            "cancelLabel": "Cancelar",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "daysOfWeek": [
+                "Dom",
+                "Seg",
+                "Ter",
+                "Qua",
+                "Qui",
+                "Sex",
+                "Sáb"
+            ],
+            "monthNames": [
+                "Janeiro",
+                "Fevereiro",
+                "Março",
+                "Abril",
+                "Maio",
+                "Junho",
+                "Julho",
+                "Agosto",
+                "Setembro",
+                "Outubro",
+                "Novembro",
+                "Dezembro"
+            ],
+            "firstDay": 1
+        },
+      opens: 'left',
+
+    }, function(start, end, label) {
+      console.log("Uma nova seleção de data foi feita: " + start.format('DD-MM-YYYY') + ' to ' + end.format('DD-MM-YYYY'));
+    });
+
+});
+
+//limpar campo intervalo de data
+$('#intervalodata').on('cancel.daterangepicker', function(ev, picker) {
+    $('#intervalodata').val('');
+ });

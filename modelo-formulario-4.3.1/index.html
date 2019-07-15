@@ -9,19 +9,21 @@
   <meta name="generator" content="Jekyll v3.8.5">
   <title>Exemplo </title>
 
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css" >
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" >
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" >
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
   <!--Bootstrap datepicker-->
   <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
   <link href="css/form-customizado.css" rel="stylesheet">
   
-<!--Bootstrap select2-->
+  <!--Bootstrap select2-->
   <link rel="stylesheet" href="css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/select2-bootstrap.css">
-
 
 </head>
 
@@ -83,7 +85,7 @@
 
     <div class="row p-3">
       <div class="col-md-12 order-md-1">
-        <h4 class="mb-3">Formulário padrão</h4>
+        <h4 class="mb-3">Cadastro Genérico</h4>
 
         <form class="needs-validation" novalidate>
           <div class="row">
@@ -237,6 +239,30 @@
             </div>
 
 
+            <div class="col-md-12 mb-3">
+                <a href="#"  onclick="LimparSelect2('#atividadefisica')"
+                  data-toggle="tooltip" title="Limpar a busca!">
+                  <i class="fas fa-recycle" style="font-size:20px; text-decoration:none; color: red;"></i>
+                </a>
+ 
+ 
+               <label for="atividadefisica">Quais Atividades você prática?</label>
+               <select class="form-control select2-multiple" name="states[]" multiple="multiple" id="atividadefisica" tabindex="-1" aria-hidden="true" required>
+                               <option></option>
+                               <option value="01">Yoga</option>
+                               <option value="02">Ballet fitness</option>
+                               <option value="03">Crossfit</option>
+                               <option value="04">Circo</option>
+                               <option value="05">Hidroginástica</option>
+                               <option value="06">Pilates</option>
+                               <option value="07">Vôlei</option> 
+                 </select>
+               <div class="invalid-feedback">
+                 Por favor selecione uma ou mais atividade física.
+               </div>
+             </div>
+
+
           </div>
 
 
@@ -281,6 +307,7 @@
 
 
           <div class="row">
+
             <div class="col-md-4 mb-3">
               <label for="complemento">Complemento<span class="text-muted">(opcional)</span></label>
               <input type="text" class="form-control" id="complemento" placeholder="Apartamento ou suite">
@@ -316,6 +343,8 @@
               </div>
               <label class="cor-contador" for="qtdCaratere" id="resultado">Quantidade de Carateres: 0</label>
             </div>
+
+
           </div>
 
           <div class="row">
@@ -333,6 +362,26 @@
             </div>
 
           </div>
+
+
+          <div class="row">
+
+
+              <div class="col-md-3 mb-3">
+                  <label for="cor">Selecione uma cor</label>
+                  <input type="text" class="form-control jscolor {onFineChange:'update(this)'}" id="cor" value="cc66ff" placeholder="" required>
+                  <div class="invalid-feedback">
+                    Selecione uma cor, é obrigatório
+                  </div>
+              </div>
+
+              <div class="col-md-9 mb-3">
+                    <p id="receberCor" style="border:1px solid gray; width: 100%; height: 100px;">
+              </div>
+        
+         </div>
+      
+
 
 
           <div class="row">
@@ -409,7 +458,7 @@
           </div>
           <hr class="mb-4">
 
-          <h4 class="mb-3">Payment</h4>
+          <h4 class="mb-3">Forma de pagamento</h4>
 
           <div class="d-block my-3">
             <div class="custom-control custom-radio">
@@ -427,7 +476,18 @@
           </div>
 
           <div class="row">
-            <div class="col-md-6 mb-3">
+
+              <div class="col-md-4 mb-3">
+                  <label for="intervalodata">Qual a data da sua viagem?</label>
+                  <input type="text" class="form-control" id="intervalodata" name="daterange" placeholder="" required>
+                  <small class="text-muted">Selecione um intervalo de data</small>
+                  <div class="invalid-feedback">
+                    Um intervalo de data é obrigatório
+                  </div>
+              </div>
+
+
+            <div class="col-md-4 mb-3">
               <label for="cc-name">Nome no cartão</label>
               <input type="text" class="form-control" id="cc-name" placeholder="" required>
               <small class="text-muted">Nome completo conforme exibido no cartão</small>
@@ -435,25 +495,28 @@
                 Nome no cartão é obrigatório
               </div>
             </div>
-            <div class="col-md-6 mb-3">
+
+            <div class="col-md-4 mb-3">
               <label for="cc-number">Número do Cartão de Crédito</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <input type="text" class="form-control numero-cartao" id="cc-number" placeholder="" required>
               <div class="invalid-feedback">
                 O número do cartão de crédito é obrigatório
               </div>
             </div>
+
           </div>
+
           <div class="row">
             <div class="col-md-3 mb-3">
               <label for="cc-expiration">Expiração</label>
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <input type="text" class="form-control expiracao-cartao" id="cc-expiration" placeholder="" required>
               <div class="invalid-feedback">
                 Data de expiração exigida
               </div>
             </div>
             <div class="col-md-3 mb-3">
               <label for="cc-cvv">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <input type="text" class="form-control codigo-cartao numerico" id="cc-cvv" placeholder="" required>
               <div class="invalid-feedback">
                 Código de segurança requerido
               </div>
@@ -516,24 +579,27 @@
   <!--modal -->
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
   <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
   <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
   <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+  <script type="text/javascript" src="js/jscolor.js"></script>
+  <script type="text/javascript" src="js/jquery.payment.min.js"></script>
+  
+  <script type="text/javascript" src="js/select2.full.js.download"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/i18n/pt-BR.js"></script>
 
+   <!--dateranger-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
-  <script src="js/select2.full.js.download"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/i18n/pt-BR.js"></script>
-
-
-  <script src="js/form-dataTables.js"></script>
-  <script src="js/form-dados.js"></script>
-  <script src="js/form-validation.js"></script>
-
+  <script type="text/javascript" src="js/form-dataTables.js"></script>
+  <script type="text/javascript" src="js/form-dados.js"></script>
+  <script type="text/javascript" src="js/form-validation.js"></script>
 
 
 </body>
@@ -545,16 +611,30 @@ input com valor usando jquery.mask
 input com cep usando jquery.mask
 input com data  bootstrap-datepicker
 input com telefone usando jquery.mask
+input com cpf usando jquery.mask
+input com cnpj usando jquery.mask
 textarea com contador de caracteres
 selecte para envio de arquivos
 combobox dependente 
 combobox comum
 responsive layout
 popover e tooltip para descrições
+select2 para seleção e consulta e multiplo, tradução e tema Bootstrap4
+Janela Modal para cadastro na mesma página
+Intervalo de Data - daterangepicker
+COLOPICK - exemplo : http://jscolor.com/
+validação de dados de cartão de crédito = https://tableless.com.br/plugins-jquery-e-bibliotecas-javascript-para-e-commerces/
+
+VISUALIZADOR DE IMAGEM
+
+
 
 https://www.sport-histoire.fr/pt/Geografia/Paises_por_ordem_alfabetica.php
 select2 para consulta de registros, tradução e tema Bootstrap4
 https://medium.com/@erikwitkowski/caixas-de-sele%C3%A7%C3%A3o-otimizadas-com-jquery-select2-no-asp-net-1825fa873927
 Janela Modal para cadastro na mesma página
 https://fontawesome.com/icons
+
+https://tableless.com.br/plugins-jquery-e-bibliotecas-javascript-para-e-commerces/
+
  -->
