@@ -385,8 +385,15 @@
 
 
           <div class="row">
-          
+
+         
             <div class="col-md-4 mb-3">
+
+            <a href="#" onclick="MostarModal()" data-toggle="tooltip" 
+                title="Cadastro de Estado!">
+              <i class="fas fa-plus-square" style="font-size:20px; text-decoration:none; color: red;"></i>
+            </a>
+
               <label for="estado">Estado</label>
               <select class="custom-select d-block w-100 " id="estado" required>
                 <option value="">Escolha...</option>
@@ -410,6 +417,12 @@
             </div>
           
             <div class="col-md-4 mb-3">
+
+            <a href="#" onclick="MostarModal()" data-toggle="tooltip" 
+                title="Cadastro de Cidade!">
+              <i class="fas fa-plus-square"  style="font-size:20px; text-decoration:none; color: red;"></i>
+            </a>
+
               <label for="cidade">Cidade</label>
               <select class="custom-select d-block w-100" id="cidade" required>
                 <option value="">Escolha...</option>
@@ -538,10 +551,6 @@
 
       </div>
     </div>
-
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-      Chamar Modal Modelo Padrão
-    </button>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; 2017-2019 Formulário Padrão</p>

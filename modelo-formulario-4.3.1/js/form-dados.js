@@ -57,6 +57,12 @@ $(document).ready(function () {
 
 });
 
+
+function MostarModal() {
+    $(".modal").modal();
+}
+
+
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //configuração do datepicker
