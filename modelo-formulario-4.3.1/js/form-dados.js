@@ -54,6 +54,28 @@ $(document).ready(function () {
         }
     });
 
+    //usando sweetalert2
+    document.getElementById('btnGravar').onclick = function () {
+        swal({
+            title: 'Você está certo disso?',
+            text: "Está operação vai gravar os dados!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim, tenho certeza!',
+            cancelButtonText: 'Não Tenho certeza...'
+        }).then((result) => {
+            if (result.value) {
+                swal(
+                    'Parabéns!',
+                    'Você acertou!',
+                    'success'
+                )
+            }
+        })
+    };
+
 
 });
 
