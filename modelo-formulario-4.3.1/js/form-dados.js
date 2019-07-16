@@ -55,8 +55,21 @@ $(document).ready(function () {
     });
 
 
+    //editor de texto
+    $('.textarea').wysihtml5({
+        toolbar: {
+          fa: true
+        }
+    });
+
+
+
+});
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+   
     //usando sweetalert2
-    document.getElementById('btnGravarNovo').onclick = function () {
+    function GravacaoSucessoSweetalert(){
         swal({
             position: 'top-end',
             showConfirmButton: false,
@@ -64,8 +77,8 @@ $(document).ready(function () {
             timer: 3000,
             type: 'success',
             title: 'Registro foi gravado com sucesso'
-        });          
-    };
+        });   
+    }
 
     //usando sweetalert2
     document.getElementById('btnGravar').onclick = function () {
@@ -80,16 +93,10 @@ $(document).ready(function () {
             cancelButtonText: 'Não Tenho certeza...'
         }).then((result) => {
             if (result.value) {
-                swal(
-                    'Parabéns!',
-                    'Você acertou!',
-                    'success'
-                )
+                GravacaoSucessoSweetalert();
             }
         })
     };
-
-});
 
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
