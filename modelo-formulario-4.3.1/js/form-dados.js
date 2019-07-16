@@ -54,6 +54,19 @@ $(document).ready(function () {
         }
     });
 
+
+    //usando sweetalert2
+    document.getElementById('btnGravarNovo').onclick = function () {
+        swal({
+            position: 'top-end',
+            showConfirmButton: false,
+            toast: true,
+            timer: 3000,
+            type: 'success',
+            title: 'Registro foi gravado com sucesso'
+        });          
+    };
+
     //usando sweetalert2
     document.getElementById('btnGravar').onclick = function () {
         swal({
