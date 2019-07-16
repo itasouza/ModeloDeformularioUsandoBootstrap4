@@ -49,6 +49,7 @@ $(document).ready(function () {
         width: null,
         containerCssClass: ':all:',
         language: "pt-BR",
+        allowClear: true,
         inputTooShort: function () {
             return "Você deve inserir mais caracteres ...";
         }
@@ -144,14 +145,6 @@ function QtdCaracteresCampo() {
     }
     alert("Quantidade de Caracteres ultrapassou o limite permitido");
     return false;
-}
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-//limpar select2
-function LimparSelect2(idselect) {
-    $(idselect).val([]).trigger('change');
 }
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
