@@ -1,3 +1,6 @@
+"use strict";
+
+
 $(document).ready(function () {
 
     definirDatePicker();
@@ -102,10 +105,15 @@ $(document).ready(function () {
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-function MostarModal() {
+function MostrarModal() {
     $(".modal").modal();
 }
 
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+function LimparSelect2(idSelect){
+    $(idSelect).val([]).trigger('change');
+}
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
