@@ -58,15 +58,14 @@ $(document).ready(function () {
         }
     });
 
-
-    //editor de texto
-    $('.textarea').wysihtml5({
-        toolbar: {
-          fa: true
-        }
-    });
-
-
+     //usando o editor ckeditor5
+     ClassicEditor.create( document.querySelector('#editor'))
+     .then( editor => {
+             console.log( editor );
+     } )
+     .catch( error => {
+             console.error( error );
+     } );
 
 });
 

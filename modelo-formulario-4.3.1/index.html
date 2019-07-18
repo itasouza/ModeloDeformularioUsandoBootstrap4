@@ -25,8 +25,7 @@
   <!--Bootstrap select2-->
   <link rel="stylesheet" href="css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/select2-bootstrap.css">
-  <!-- Editor de texto -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap3-wysihtml5.min.css"/>
+ 
   
 </head>
 
@@ -342,13 +341,15 @@
 
             <div class="col-md-12 mb-3">
               <label for="contrato"> Comentários </label>
-              <textarea class="form-control" onkeypress="QtdCaracteresCampo()" required name="comentario"
-                tabindex="15" rows="5" id="comentario"></textarea>
+              <textarea name="form-control" onkeypress="QtdCaracteresCampo()" required
+               name="comentario" id="editor"></textarea>
               <div class="invalid-feedback">
                 Por favor adicionar um comentário
               </div>
               <label class="cor-contador" for="qtdCaratere" id="resultado">Quantidade de caracteres: 0</label>
             </div>
+
+            
 
 
           </div>
@@ -629,13 +630,13 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
   <!--editor de texto-->
-  <script src="js/wysihtml5x-toolbar.min.js"></script>
-  <script src="js/handlebars.runtime.min.js"></script>
-  <script src="js/bootstrap3-wysihtml5.min.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/12.3.1/classic/ckeditor.js"></script>
 
   <script type="text/javascript" src="js/form-dataTables.js"></script>
   <script type="text/javascript" src="js/form-dados.js"></script>
   <script type="text/javascript" src="js/form-validation.js"></script>
+
+
 
 
 </body>
@@ -661,6 +662,7 @@ Intervalo de Data - daterangepicker
 COLOPICK - exemplo : http://jscolor.com/
 validação de dados de cartão de crédito = https://tableless.com.br/plugins-jquery-e-bibliotecas-javascript-para-e-commerces/
 Editor de texto usando https://bootstrap-wysiwyg.github.io/bootstrap3-wysiwyg/
+Editor de texto = https://ckeditor.com/ckeditor-4/download/#
 
 
 VISUALIZADOR DE IMAGEM
