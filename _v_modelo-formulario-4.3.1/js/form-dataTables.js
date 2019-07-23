@@ -1,10 +1,6 @@
 $(document).ready(function () {
     $('#dadostabela').DataTable({
         responsive: true,
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ],
         "language": {
             "sEmptyTable": "Nenhum registro encontrado",
             "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",

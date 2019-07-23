@@ -1,6 +1,3 @@
-"use strict";
-
-
 $(document).ready(function () {
 
     definirDatePicker();
@@ -52,38 +49,10 @@ $(document).ready(function () {
         width: null,
         containerCssClass: ':all:',
         language: "pt-BR",
-        allowClear: true,
         inputTooShort: function () {
             return "Você deve inserir mais caracteres ...";
         }
     });
-
-     //usando o editor ckeditor5
-
-     ClassicEditor.create( document.querySelector('#editor'))
-        .then( editor => {
-               console.log( editor );
-        } )
-        .catch( error => {
-                console.error( error );
-     } );
-
-
-});
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-   
-    //usando sweetalert2
-    function GravacaoSucessoSweetalert(){
-        swal({
-            position: 'top-end',
-            showConfirmButton: false,
-            toast: true,
-            timer: 3000,
-            type: 'success',
-            title: 'Registro foi gravado com sucesso'
-        });   
-    }
 
     //usando sweetalert2
     document.getElementById('btnGravar').onclick = function () {
@@ -98,23 +67,24 @@ $(document).ready(function () {
             cancelButtonText: 'Não Tenho certeza...'
         }).then((result) => {
             if (result.value) {
-                GravacaoSucessoSweetalert();
+                swal(
+                    'Parabéns!',
+                    'Você acertou!',
+                    'success'
+                )
             }
         })
     };
 
+});
+
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-function MostrarModal() {
+function MostarModal() {
     $(".modal").modal();
 }
 
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-function LimparSelect2(idSelect){
-    $(idSelect).val([]).trigger('change');
-}
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -154,6 +124,14 @@ function QtdCaracteresCampo() {
     }
     alert("Quantidade de Caracteres ultrapassou o limite permitido");
     return false;
+}
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+//limpar select2
+function LimparSelect2(idselect) {
+    $(idselect).val([]).trigger('change');
 }
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
