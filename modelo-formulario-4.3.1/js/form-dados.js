@@ -58,16 +58,14 @@ $(document).ready(function () {
         }
     });
 
-     //usando o editor ckeditor5
 
      ClassicEditor.create( document.querySelector('#editor'))
-        .then( editor => {
-               console.log( editor );
-        } )
-        .catch( error => {
-                console.error( error );
+     .then( editor => {
+             console.log( editor );
+     } )
+     .catch( error => {
+             console.error( error );
      } );
-
 
 });
 
