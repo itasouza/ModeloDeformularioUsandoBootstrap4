@@ -25,8 +25,9 @@
   <!--Bootstrap select2-->
   <link rel="stylesheet" href="css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/select2-bootstrap.css">
- 
-  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 </head>
 
 
@@ -266,7 +267,7 @@
               </div>
             </div>
 
-            
+
           </div>
 
 
@@ -341,15 +342,15 @@
 
             <div class="col-md-12 mb-3">
               <label for="contrato"> Comentários </label>
-              <textarea name="form-control" onkeypress="QtdCaracteresCampo()" required
-               name="comentario" id="editor"></textarea>
+              <textarea name="form-control" onkeypress="QtdCaracteresCampo()" required name="comentario"
+                id="editor"></textarea>
               <div class="invalid-feedback">
                 Por favor adicionar um comentário
               </div>
               <label class="cor-contador" for="qtdCaratere" id="resultado">Quantidade de caracteres: 0</label>
             </div>
 
-            
+
 
 
           </div>
@@ -556,10 +557,16 @@
             Gravar dados <i class="fas fa-save"></i>
           </button>
 
+          <button class="btn btn-primary mb-1 btnPersonalizado" id="btn" onclick="mensagemToast()" type="submit">
+            Toast <i class="fas fa-save"></i>
+          </button>
+
         </form>
 
       </div>
     </div>
+
+
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; 2017-2019 Formulário Padrão</p>
@@ -617,8 +624,11 @@
   <script type="text/javascript" src="js/jscolor.js"></script>
   <script type="text/javascript" src="js/jquery.payment.min.js"></script>
 
+   <!--select2-->
   <script type="text/javascript" src="js/select2.full.js.download"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/i18n/pt-BR.js"></script>
+
+  <!--sweetalert2-->
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.12.15/sweetalert2.min.js"></script>
 
@@ -629,12 +639,13 @@
   <!--editor de texto-->
   <script src="https://cdn.ckeditor.com/ckeditor5/12.3.1/classic/ckeditor.js"></script>
 
+  <!--toastr-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+   <!--js interno-->
   <script type="text/javascript" src="js/form-dataTables.js"></script>
   <script type="text/javascript" src="js/form-dados.js"></script>
   <script type="text/javascript" src="js/form-validation.js"></script>
-
-
-
 
 </body>
 
@@ -660,7 +671,7 @@ COLOPICK - exemplo : http://jscolor.com/
 validação de dados de cartão de crédito = https://tableless.com.br/plugins-jquery-e-bibliotecas-javascript-para-e-commerces/
 Editor de texto usando https://bootstrap-wysiwyg.github.io/bootstrap3-wysiwyg/
 Editor de texto = https://ckeditor.com/ckeditor-4/download/#
-
+usando toast http://marcdias.com.br/como-utilizar-o-toastr-notifications-com-asp-net-mvc/
 
 VISUALIZADOR DE IMAGEM
 

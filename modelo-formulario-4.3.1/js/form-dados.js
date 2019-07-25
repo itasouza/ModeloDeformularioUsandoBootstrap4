@@ -58,16 +58,45 @@ $(document).ready(function () {
         }
     });
 
-
+    //usado ClassicEditor
      ClassicEditor.create( document.querySelector('#editor'))
      .then( editor => {
-             console.log( editor );
+           //  console.log( editor );
      } )
      .catch( error => {
-             console.error( error );
+            // console.error( error );
      } );
 
 });
+
+
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+function mensagemToast(){
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "showDuration": "200",
+        "hideDuration": "500",
+        "timeOut": "3000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+
+      toastr["success"]("Tudo certo", "Registro gravado com sucesso");
+      toastr["info"]("Não esqueça", "você tem uma nova mensagem");
+      toastr["warning"]("Cuidado", "Ocorreu um erro no processo de expedição");
+      toastr["error"]("Não deu certo", "O registro não foi gravado corretamente");
+}
+
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
    
