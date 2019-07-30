@@ -9,6 +9,7 @@
   <meta name="generator" content="Jekyll v3.8.5">
   <title>Exemplo </title>
 
+  <!--bootstrap-->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!--dataTables-->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
@@ -21,12 +22,13 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!--sweetalert2-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.12.15/sweetalert2.min.css">
-  <link href="css/form-customizado.css" rel="stylesheet">
   <!--Bootstrap select2-->
   <link rel="stylesheet" href="css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/select2-bootstrap.css">
-
+  <!--toastr-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <!--Arquivo customizado-->
+  <link rel="stylesheet" href="css/form-customizado.css" >
 
 </head>
 
@@ -246,7 +248,7 @@
 
             <div class="col-md-12 mb-3">
               <a href="#" onclick="LimparSelect2('#atividadefisica')" data-toggle="tooltip" title="Limpar opções!">
-                <i class="fas fa-recycle" style="font-size:20px; text-decoration:none; color: red;"></i>
+                <i class="fas fa-recycle" style="font-size:20px; text-decoration:none;"></i>
               </a>
 
 
@@ -399,7 +401,7 @@
             <div class="col-md-4 mb-3">
 
               <a href="#" onclick="MostrarModal()" data-toggle="tooltip" title="Cadastro de Estado!">
-                <i class="fas fa-plus-square" style="font-size:20px; text-decoration:none; color: red;"></i>
+                <i class="fas fa-plus-square" style="font-size:20px; text-decoration:none;"></i>
               </a>
 
               <label for="estado">Estado</label>
@@ -427,7 +429,7 @@
             <div class="col-md-4 mb-3">
 
               <a href="#" onclick="MostrarModal()" data-toggle="tooltip" title="Cadastro de Cidade!">
-                <i class="fas fa-plus-square" style="font-size:20px; text-decoration:none; color: red;"></i>
+                <i class="fas fa-plus-square" style="font-size:20px; text-decoration:none;"></i>
               </a>
 
               <label for="cidade">Cidade</label>
@@ -550,23 +552,30 @@
           </div>
           <hr class="mb-4">
 
-          <a class="btn btn-warning mb-1  btnPersonalizado" href="https://www.google.com.br/" id="btnRetornar"
+          <a class="btn btn-light mb-1 btnPersonalizado" href="https://www.google.com.br/" id="btnRetornar"
             role="button">Retornar <i class="fas fa-angle-double-left "></i></a>
 
           <button class="btn btn-primary mb-1 btnPersonalizado" id="btnGravar" type="submit">
             Gravar dados <i class="fas fa-save"></i>
           </button>
 
-          <button class="btn btn-primary mb-1 btnPersonalizado" id="btn" onclick="mensagemToast()" type="submit">
+          <button class="btn btn-secondary mb-1 btnPersonalizado" id="btn" onclick="mensagemToast()" type="submit">
             Toast <i class="fas fa-save"></i>
           </button>
 
-          <button class="btn btn-primary mb-1 btnPersonalizado" id="btnSpinner" type="submit">
+          <button class="btn btn-info mb-1 btnPersonalizado" id="btnSpinner" type="submit">
              <span class="spinner-border spinner-border-sm"></span>
              Carregando
           </button>
 
-
+          <button class="btn btn-success mb-1 btnPersonalizado" id="btn-sweetAlertSuccess"  type="submit">
+            Sweet Alert de sucesso <i class="fas fa-save"></i>
+          </button>
+		  
+          <button class="btn btn-danger mb-1 btnPersonalizado" id="btn-sweetAlertError"  type="submit">
+            Sweet Alert de error <i class="fas fa-save"></i>
+          </button>
+		  					
 
         </form>
 
@@ -587,8 +596,7 @@
   </div>
 
 
-  <!--modal -->
-
+  <!--inicio modal -->
 
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -617,43 +625,43 @@
     </div>
   </div>
 
-  <!--modal -->
+  <!--fim modal -->
 
-
+   <!--layout básico bootstrap 4-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+  <!--dataTables-->
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+  <!--Bootstrap datepicker-->
   <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+  <!--jquery.mask-->
   <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+  <!--jscolor-->
   <script type="text/javascript" src="js/jscolor.js"></script>
+  <!--jquery.payment-->
   <script type="text/javascript" src="js/jquery.payment.min.js"></script>
-
    <!--select2-->
   <script type="text/javascript" src="js/select2.full.js.download"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/i18n/pt-BR.js"></script>
-
   <!--sweetalert2-->
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.12.15/sweetalert2.min.js"></script>
-
   <!--dateranger-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-
   <!--editor de texto-->
   <script src="https://cdn.ckeditor.com/ckeditor5/12.3.1/classic/ckeditor.js"></script>
-
-  <!--toastr-->
+   <!--toastr-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-   <!--js interno-->
   <script type="text/javascript" src="js/form-dataTables.js"></script>
   <script type="text/javascript" src="js/form-dados.js"></script>
   <script type="text/javascript" src="js/form-validation.js"></script>
-
+  
 </body>
 
 </html>

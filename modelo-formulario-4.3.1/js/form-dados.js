@@ -112,6 +112,17 @@ function mensagemToast(){
         });   
     }
 
+    function GravacaoErroSweetalert(){
+        swal({
+            position: 'top-end',
+            showConfirmButton: false,
+            toast: true,
+            timer: 3000,
+            type: 'error',
+            title: 'Registro não foi gravado'
+        });   
+    }
+
     //usando sweetalert2
     document.getElementById('btnGravar').onclick = function () {
         swal({
@@ -131,6 +142,37 @@ function mensagemToast(){
     };
 
 
+	  document.getElementById('btn-sweetAlertError').onclick = function () {
+        swal({
+                title: 'Erro!',
+                text: "Operação não foi realizada com sucesso.",
+                type: 'error',
+                showCancelButton: false,
+                //confirmButtonColor: '#dc3545',
+                confirmButtonText: 'Ok'
+        }).then((result) => {
+            if (result.value) {
+                GravacaoErroSweetalert();
+            }
+        })
+    };
+	
+	 document.getElementById('btn-sweetAlertSuccess').onclick = function () {
+        swal({
+                title: 'Sucesso!',
+                text: "Operação realizada com sucesso.",
+                type: 'success',
+                showCancelButton: false,
+                confirmButtonColor: '#28a745',
+                confirmButtonText: 'Ok'
+        }).then((result) => {
+            if (result.value) {
+                GravacaoSucessoSweetalert();
+            }
+        })
+    };
+	
+	
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 function MostrarModal() {
