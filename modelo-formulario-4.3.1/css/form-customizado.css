@@ -25,3 +25,7 @@
     font-weight: 900;
     color: #eaeeef;
 }
+
+.pointer{
+    cursor: pointer;
+}

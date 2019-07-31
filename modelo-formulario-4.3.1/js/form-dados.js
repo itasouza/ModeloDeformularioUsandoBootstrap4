@@ -124,7 +124,7 @@ function mensagemToast(){
     }
 
     //usando sweetalert2
-    document.getElementById('btnGravar').onclick = function () {
+    document.getElementById('btnSalvar').onclick = function () {
         swal({
             title: 'Você está certo disso?',
             text: "Está operação vai gravar os dados!",

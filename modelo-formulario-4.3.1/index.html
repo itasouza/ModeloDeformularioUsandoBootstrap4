@@ -109,11 +109,6 @@
             </div>
 
             <div class="col-md-6 mb-3">
-              <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo 
-                    explicando o seu uso,explicando o seu uso
-                    explicando o seu uso,explicando o seu uso">
-                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
-
               <label for="lastName">Último nome</label>
               <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
               <div class="invalid-feedback">
@@ -126,11 +121,6 @@
 
 
             <div class="col-md-3 mb-3">
-              <a href="#" data-toggle="popover" title="Sobre o nome do usuário" data-content="Aqui o conteúdo sobre o campo 
-                    explicando o seu uso,explicando o seu uso
-                    explicando o seu uso,explicando o seu uso">
-                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
-
               <label for="username">Nome de usuário</label>
               <input type="text" class="form-control" id="username" placeholder="Nome usuário" required>
               <div class="invalid-feedback" style="width: 100%;">
@@ -148,11 +138,6 @@
             </div>
 
             <div class="col-md-3 mb-3">
-              <a href="#" data-toggle="popover" title="Sobre o cpf do usuário" data-content="Aqui o conteúdo sobre o campo 
-                    explicando o seu uso,explicando o seu uso
-                    explicando o seu uso,explicando o seu uso">
-                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
-
               <label for="cpf">CPF do usuário</label>
               <input type="text" class="form-control cpf" id="cpf" placeholder="..." required>
               <div class="invalid-feedback" style="width: 100%;">
@@ -161,10 +146,6 @@
             </div>
 
             <div class="col-md-3 mb-3">
-              <a href="#" data-toggle="popover" title="Sobre o CNPJ da empresa" data-content="Aqui o conteúdo sobre o campo 
-                    explicando o seu uso,explicando o seu uso
-                    explicando o seu uso,explicando o seu uso">
-                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
 
               <label for="cnpj">CNPJ da Empresa</label>
               <input type="text" class="form-control cnpj" id="cnpj" placeholder="..." required>
@@ -179,11 +160,6 @@
 
 
             <div class="col-md-4 mb-3">
-              <a href="#" data-toggle="popover" title="Sobre o pais" data-content="Aqui o conteúdo sobre o campo 
-                    explicando o seu uso,explicando o seu uso
-                    explicando o seu uso,explicando o seu uso">
-                <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i></a>
-
               <label for="paisselecao">Pais</label>
               <select class="form-control select2-single" name="state" id="paisselecao" tabindex="-1" aria-hidden="true"
                 required>
@@ -393,19 +369,14 @@
           </div>
 
 
-
-
           <div class="row">
 
 
-            <div class="col-md-4 mb-3">
 
-              <a href="#" onclick="MostrarModal()" data-toggle="tooltip" title="Cadastro de Estado!">
-                <i class="fas fa-plus-square" style="font-size:20px; text-decoration:none;"></i>
-              </a>
-
-              <label for="estado">Estado</label>
-              <select class="custom-select d-block w-100 " id="estado" required>
+        <div class="col-md-4 mb-3">
+          <label for="estado">Estado</label>
+          <div class="input-group">
+            <select class="form-control" id="estado" required>
                 <option value="">Escolha...</option>
                 <option>Paraíba (PB)</option>
                 <option>Paraná (PR)</option>
@@ -420,20 +391,23 @@
                 <option>São Paulo (SP)</option>
                 <option>Sergipe (SE)</option>
                 <option>Tocantins (TO)</option>
-              </select>
-              <div class="invalid-feedback">
+            </select>
+            <div class="input-group-prepend">
+              <span class="input-group-text btn btn-outline-secondary pointer" id="btnAdicionar">
+                <i class="fas fa-plus" style="font-size:20px; text-decoration:none; color: white"></i>
+              </span>
+            </div>
+             <div class="invalid-feedback">
                 Por favor, forneça um estado.
               </div>
-            </div>
+          </div>
+        </div>
+       
 
-            <div class="col-md-4 mb-3">
-
-              <a href="#" onclick="MostrarModal()" data-toggle="tooltip" title="Cadastro de Cidade!">
-                <i class="fas fa-plus-square" style="font-size:20px; text-decoration:none;"></i>
-              </a>
-
-              <label for="cidade">Cidade</label>
-              <select class="custom-select d-block w-100" id="cidade" required>
+        <div class="col-md-4 mb-3">
+           <label for="cidade">Cidade</label>
+          <div class="input-group">
+            <select class="form-control" id="estado" required>
                 <option value="">Escolha...</option>
                 <option>Brasil</option>
                 <option>Afeganistão</option>
@@ -454,11 +428,17 @@
                 <option>Bangladexe</option>
                 <option>Barbados</option>
                 <option>Barém</option>
-              </select>
-              <div class="invalid-feedback">
-                Por favor, selecione uma cidade.
-              </div>
+            </select>
+            <div class="input-group-prepend">
+              <span class="input-group-text btn-outline-secondary pointer" id="btnAdicionar">
+                <i class="fas fa-plus" style="font-size:20px; text-decoration:none; color: white"></i>
+              </span>
             </div>
+             <div class="invalid-feedback">
+                Por favor, forneça um estado.
+              </div>
+          </div>
+        </div>
 
 
             <div class="col-md-4 mb-3">
@@ -552,20 +532,20 @@
           </div>
           <hr class="mb-4">
 
-          <a class="btn btn-light mb-1 btnPersonalizado" href="https://www.google.com.br/" id="btnRetornar"
-            role="button">Retornar <i class="fas fa-angle-double-left "></i></a>
+          <a class="btn btn-outline-secondary mb-1 btnPersonalizado" href="https://www.google.com.br/" id="btnRetornar"
+            role="button">Cancelar</a>
 
-          <button class="btn btn-primary mb-1 btnPersonalizado" id="btnGravar" type="submit">
-            Gravar dados <i class="fas fa-save"></i>
+          <button class="btn btn-primary mb-1 btnPersonalizado" id="btnSalvar" type="submit">
+            Salvar 
           </button>
 
-          <button class="btn btn-secondary mb-1 btnPersonalizado" id="btn" onclick="mensagemToast()" type="submit">
+          <button class="btn btn-secondary mb-1 btnPersonalizado" id="btnToast" onclick="mensagemToast()" type="submit">
             Toast <i class="fas fa-save"></i>
           </button>
 
-          <button class="btn btn-info mb-1 btnPersonalizado" id="btnSpinner" type="submit">
+          <button class="btn btn-info mb-1 btnPersonalizado" id="btnPesquisar" type="submit">
+             Pesquisar
              <span class="spinner-border spinner-border-sm"></span>
-             Carregando
           </button>
 
           <button class="btn btn-success mb-1 btnPersonalizado" id="btn-sweetAlertSuccess"  type="submit">
