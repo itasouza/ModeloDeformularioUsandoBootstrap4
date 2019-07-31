@@ -126,19 +126,13 @@ function mensagemToast(){
     //usando sweetalert2
     document.getElementById('btnSalvar').onclick = function () {
         swal({
-            title: 'Você está certo disso?',
-            text: "Está operação vai gravar os dados!",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sim, tenho certeza!',
-            cancelButtonText: 'Não Tenho certeza...'
-        }).then((result) => {
-            if (result.value) {
-                GravacaoSucessoSweetalert();
-            }
-        })
+            position: 'top-end',
+            showConfirmButton: false,
+            toast: true,
+            timer: 3000,
+            type: 'success',
+            title: 'Registro foi gravado com sucesso'
+        });
     };
 
 
@@ -172,7 +166,24 @@ function mensagemToast(){
         })
     };
 	
-	
+
+    document.getElementById('btn-sweetAlertOpcao').onclick = function () {
+        swal({
+            title: 'Você está certo disso?',
+            text: "Está operação vai mudar a agenda!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim, tenho certeza!',
+            cancelButtonText: 'Não Tenho certeza...'
+        }).then((result) => {
+            if (result.value) {
+                GravacaoSucessoSweetalert();
+            }
+        })
+    };
+
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 function MostrarModal() {
