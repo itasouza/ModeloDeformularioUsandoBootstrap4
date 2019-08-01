@@ -69,6 +69,43 @@ $(document).ready(function () {
 
 });
 
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+//visualizar os nome dos arquivos selecionados no file Multiplo
+$(".fileMultiplo").change(function() {
+  readURL(this);
+});
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+      for (let i = 0; i < input.files.length; i++){
+          console.log(input.files[i].name)
+      }
+  }
+}
+
+
+//validar a quantidade de arquivos enviados 
+$('.fileMultiplo').change(function(){
+    var files = this.files; // selecionar os arquivos
+    var qtde = files.length; // conta a quantidade
+
+    if(qtde > 5) { //verificar se é maior que 5
+       swal({
+            position: 'top-end',
+            showConfirmButton: false,
+            toast: true,
+            timer: 3000,
+            type: 'error',
+            title: 'Não é permitido enviar mais do que 5 arquivos.'
+        });
+       	$(this).val("");
+       	return false;
+    } else { // se não for mais que 5, deixa continuar.
+       	return true;
+    }
+});
+
 
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -142,13 +179,9 @@ function mensagemToast(){
                 text: "Operação não foi realizada com sucesso.",
                 type: 'error',
                 showCancelButton: false,
-                //confirmButtonColor: '#dc3545',
+                confirmButtonColor: '#dc3545',
                 confirmButtonText: 'Ok'
-        }).then((result) => {
-            if (result.value) {
-                GravacaoErroSweetalert();
-            }
-        })
+        });
     };
 	
 	 document.getElementById('btn-sweetAlertSuccess').onclick = function () {
@@ -159,11 +192,7 @@ function mensagemToast(){
                 showCancelButton: false,
                 confirmButtonColor: '#28a745',
                 confirmButtonText: 'Ok'
-        }).then((result) => {
-            if (result.value) {
-                GravacaoSucessoSweetalert();
-            }
-        })
+        });
     };
 	
 

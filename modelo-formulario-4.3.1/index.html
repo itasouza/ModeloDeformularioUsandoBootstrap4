@@ -92,7 +92,7 @@
       <div class="col-md-12 order-md-1">
         <h4 class="mb-3">Cadastro Genérico</h4>
 
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" novalidate method="post" enctype="multipart/form-data" asp-controller="UploadFiles" asp-action="Index">
           <div class="row">
 
             <div class="col-md-6 mb-3">
@@ -328,9 +328,6 @@
               <label class="cor-contador" for="qtdCaratere" id="resultado">Quantidade de caracteres: 0</label>
             </div>
 
-
-
-
           </div>
 
           <div class="row">
@@ -338,13 +335,25 @@
             <div class="col-md-12 mb-3">
 
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFile" required>
+                <input type="file" class="custom-file-input" id="customFileSimples" data-toggle="tooltip" 
+                 title="Selecione um arquivo" required>
                 <label class="custom-file-label" for="customFile">Selecione um arquivo</label>
                 <div class="invalid-feedback">
                   Selecione um arquivo
                 </div>
               </div>
 
+            </div>
+
+            <div class="col-md-12 mb-3">
+              <div class="custom-file">
+                <input type="file" multiple class="custom-file-input fileMultiplo" name="uploads[]" id="customFileMultiplo" 
+                data-toggle="tooltip"  title="Selecione vários arquivos" required>
+                <label class="custom-file-label" for="customFile">Selecione vários arquivos</label>
+                <div class="invalid-feedback">
+                  Selecione um ou mais de um arquivo
+                </div>
+              </div>
             </div>
 
           </div>
@@ -355,7 +364,7 @@
 
             <div class="col-md-3 mb-3">
               <label for="cor">Selecione uma cor</label>
-              <input type="text" class="form-control jscolor {onFineChange:'update(this)'}" id="cor" value="cc66ff"
+              <input type="text" class="form-control jscolor {onFineChange:'update(this)'} " id="cor" value="cc66ff"
                 placeholder="" required>
               <div class="invalid-feedback">
                 Selecione uma cor, é obrigatório
@@ -393,7 +402,8 @@
                 <option>Tocantins (TO)</option>
             </select>
             <div class="input-group-prepend">
-              <span class="input-group-text btn btn-outline-secondary pointer" id="btnAdicionar">
+              <span class="input-group-text btn btn-outline-secondary pointer" id="btnAdicionar"
+                data-toggle="tooltip"  title="Adicionar um novo estado" onclick="MostrarModal()">
                 <i class="fas fa-plus" style="font-size:20px; text-decoration:none; color: white"></i>
               </span>
             </div>
@@ -430,7 +440,8 @@
                 <option>Barém</option>
             </select>
             <div class="input-group-prepend">
-              <span class="input-group-text btn-outline-secondary pointer" id="btnAdicionar">
+              <span class="input-group-text btn-outline-secondary pointer" id="btnAdicionar"
+                data-toggle="tooltip"  title="Adicionar uma nova cidade" onclick="MostrarModal()">
                 <i class="fas fa-plus" style="font-size:20px; text-decoration:none; color: white"></i>
               </span>
             </div>
@@ -532,7 +543,7 @@
           </div>
           <hr class="mb-4">
 
-          <a class="btn btn-outline-secondary mb-1 btnPersonalizado" href="https://www.google.com.br/" id="btnRetornar"
+          <a class="btn btn-outline-secondary mb-1 btnPersonalizado" href="https://www.google.com.br/" id="btnCancelar"
             role="button">Cancelar</a>
 
           <button class="btn btn-primary mb-1 btnPersonalizado alertBntsalvar" id="btnSalvar" type="submit">
@@ -586,23 +597,27 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal Modelo Padrão</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Cadastro de Estado / Cidade</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p>Glass Animals are an English indie rock band from Oxford consisting of members Dave Bayley (lead vocals,
-            guitar),
-            Drew MacFarlane (guitar, keys, backing vocals), Edmund Irwin-Singer (bass, keys, backing vocals), and Joe
-            Seaward
-            (drums).
-          </p>
+          <div class="row">
+
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Nome do Estado / Cidade</label>
+              <input type="text" class="form-control" id="nomeEstado" placeholder="" value="" required>
+              <div class="invalid-feedback">
+               O nome do estado é obrigatório.
+              </div>
+            </div>
+          </div>
+
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-warning" data-dismiss="modal">Retornar <i
-              class="fas fa-angle-double-left"></i></button>
-          <button type="button" class="btn btn-primary">Gravar dados <i class="fas fa-save"></i></button>
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar
+          <button type="button" class="btn btn-primary">Salvar</button>
         </div>
       </div>
     </div>
@@ -671,6 +686,9 @@ validação de dados de cartão de crédito = https://tableless.com.br/plugins-j
 Editor de texto usando https://bootstrap-wysiwyg.github.io/bootstrap3-wysiwyg/
 Editor de texto = https://ckeditor.com/ckeditor-4/download/#
 usando toast http://marcdias.com.br/como-utilizar-o-toastr-notifications-com-asp-net-mvc/
+selecionar vários arquivos
+https://docs.microsoft.com/pt-br/aspnet/core/mvc/models/file-uploads?view=aspnetcore-2.2
+
 
 VISUALIZADOR DE IMAGEM
 
