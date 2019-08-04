@@ -59,15 +59,46 @@ $(document).ready(function () {
     });
 
     //usado ClassicEditor
-     ClassicEditor.create( document.querySelector('#editor'))
+     ClassicEditor.create( document.querySelector('#editor'),{
+        language:"pt-br",
+
+     })
      .then( editor => {
-           //  console.log( editor );
+             console.log( editor );
+             editor.setData( '<p>texto aqui!.</p>' );
+
+
+             let tamanhoTexto = editor.getDate().length;
+             console.log(tamanhoTexto);
      } )
      .catch( error => {
             // console.error( error );
      } );
 
 });
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+$("#editor").on('change keyup paste', function() {
+    console.log("ok");
+});
+
+//contagem de caracteres 
+function QtdCaracteresCampo() {
+    var txt = document.getElementById("editor").value;
+    var n = txt.length;
+    var TotalCaracteresPermitido = 500;
+    if (n < 500) {
+        // console.log("Quantidade de Carateres: " + n)
+        var Total = TotalCaracteresPermitido - n;
+        document.getElementById("resultado").innerHTML = "Quantidade de Carateres Restante : " + Total;
+        return true;
+    }
+    alert("Quantidade de Caracteres ultrapassou o limite permitido");
+    return false;
+}
+
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -248,22 +279,6 @@ function definirDatePicker() {
 
 }
 
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-//contagem de caracteres 
-function QtdCaracteresCampo() {
-    var txt = document.getElementById("comentario").value;
-    var n = txt.length;
-    var TotalCaracteresPermitido = 500;
-    if (n < 500) {
-        // console.log("Quantidade de Carateres: " + n)
-        var Total = TotalCaracteresPermitido - n;
-        document.getElementById("resultado").innerHTML = "Quantidade de Carateres Restante : " + Total;
-        return true;
-    }
-    alert("Quantidade de Caracteres ultrapassou o limite permitido");
-    return false;
-}
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
