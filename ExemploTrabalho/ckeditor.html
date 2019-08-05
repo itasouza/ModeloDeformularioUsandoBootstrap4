@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+  <body>
+
+  <div class="container">
+
+        <form class="needs-validation" novalidate method="post" enctype="multipart/form-data" asp-controller="UploadFiles"
+        asp-action="Index">
+    
+        <div class="row">
+    
+    
+            <div class="col-md-12 mb-3">
+                <label for="contrato"> Exemplo </label>
+                <textarea name="form-control" required name="comentario" id="editor"></textarea>
+                <div class="invalid-feedback">
+                    Por favor adicionar um comentário
+                </div>
+                <div id="word-count"></div>
+            </div>
+    
+        </div>
+    
+   </form>
+
+  </div>
+
+        
+ 
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+  <!--editor de texto-->
+  <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+  <script type="text/javascript" src="js/ckeditor/pt-br.js"></script>
+  <script type="text/javascript" src="js/ckeditor/ckeditor-config.js"></script>
+
+</body>
+</html>
