@@ -58,12 +58,15 @@ $(document).ready(function () {
         }
     });
 
+
+
     //usado ClassicEditor
      ClassicEditor.create( document.querySelector('#editor'),{
         language:"pt-br",
-
      })
+
      .then( editor => {
+
              console.log( editor );
              editor.setData( '<p>texto aqui!.</p>' );
 

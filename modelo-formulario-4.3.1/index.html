@@ -27,7 +27,8 @@
   <link rel="stylesheet" href="css/select2-bootstrap.css">
   <!--toastr-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-  <!--Arquivo customizado-->
+
+   <!--Arquivo customizado-->
   <link rel="stylesheet" href="css/form-customizado.css" >
   <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
 
@@ -321,11 +322,11 @@
 
             <div class="col-md-12 mb-3">
               <label for="contrato"> Comentários </label>
-              <textarea name="form-control" required name="comentario" onkeypress="QtdCaracteresCampo()"
-                id="editor"></textarea>
+              <textarea name="form-control" required name="comentario"  id="editor"></textarea>
               <div class="invalid-feedback">
                 Por favor adicionar um comentário
               </div>
+              <div id="word-count"></div>
               <label class="cor-contador" for="qtdCaratere" id="resultado">Quantidade de caracteres: 0</label>
             </div>
 
@@ -655,10 +656,11 @@
   <!--editor de texto-->
   <script src="https://cdn.ckeditor.com/ckeditor5/12.3.1/classic/ckeditor.js"></script>
   <script type="text/javascript" src="js/pt-br.js"></script>
- 
 
    <!--toastr-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
 
   <script type="text/javascript" src="js/form-dataTables.js"></script>
   <script type="text/javascript" src="js/form-dados.js"></script>
