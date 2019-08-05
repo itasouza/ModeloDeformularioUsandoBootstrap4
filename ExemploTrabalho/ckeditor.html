@@ -170,21 +170,30 @@ Preserve the relative scale, though. */
 
       </div>
 
-      <div class="row">
-          <div class="document-editor">
-              <div class="document-editor__toolbar"></div>
-              <div class="document-editor__editable-container">
-                  <div class="document-editor__editable">
-                      <p>The initial editor data.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
 
     </form>
 
 
-
+    <form class="needs-validation" novalidate method="post" enctype="multipart/form-data" asp-controller="UploadFiles"
+      asp-action="Index">
+    
+      <div class="row">
+    
+        <div class="col-md-12 mb-3">
+          <label for="contrato"> Exemplo 2 </label>
+          <div class="document-editor">
+            <div class="document-editor__toolbar"></div>
+            <div class="document-editor__editable-container">
+              <div class="document-editor__editable">
+                <p>The initial editor data.</p>
+              </div>
+            </div>
+          </div>
+        </div>  
+          
+      </div>
+    
+    </form>
 
 
   </div>

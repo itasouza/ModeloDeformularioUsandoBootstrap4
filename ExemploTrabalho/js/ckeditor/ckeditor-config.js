@@ -32,9 +32,12 @@ $(document).ready(function () {
          toolbarContainer.appendChild(editor.ui.view.toolbar.element);
   
          window.editor = editor;
+
+         editor.setData("The Flavorful Tuscany Meetup");
      } )
      .catch( err => {
          console.error( err );
      } );
 
 });
+
