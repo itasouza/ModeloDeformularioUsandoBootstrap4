@@ -1,0 +1,94 @@
+﻿
+@model IEnumerable<AppModelo.Models.Modelo>
+
+@{
+    ViewData["Title"] = "Modelo";
+}
+
+
+<div class="container-fluid">
+
+    <br />
+    <br />
+
+    @if (TempData["confirmacao"] != null)
+    {
+
+        <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>@TempData["confirmacao"]</strong>
+        </div>
+
+    }
+
+
+
+    <p id="btnControle">
+        <a asp-action="Novo" asp-controller="Modelo" class="btn btn-success">Adicionar</a>
+    </p>
+
+
+    <table id="dados" class="table table-hover  table-striped display responsive nowrap table-sm " cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Último Nome</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.PrimeiroNome</td>
+                    <td>@item.UltimoNome</td>
+                    <td class="text-right">
+                        <a class="btn btn-primary" asp-action="Editar" asp-route-id="@item.Id">Atualizar</a> |
+                        <a class="btn btn-danger" asp-action="Deletar" asp-route-id="@item.Id">Deletar</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+
+            $('#dados').DataTable({
+                "orderMulti": false,
+                "paging": true,
+                "info": false,
+                "language": {
+                    "lengthMenu": "Visualizando _MENU_ Registros por página",
+                    "zeroRecords": "Não existe registros para visualização",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No records available",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    "sSearch": "Pesquisar",
+                    "infoFiltered": "(filtered from _MAX_ total records)",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            });
+
+        });
+
+    </script>
+}

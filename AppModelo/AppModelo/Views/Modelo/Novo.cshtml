@@ -1,0 +1,23 @@
+﻿@model AppModelo.Dto.ModeloDto
+
+
+@{
+    ViewData["Title"] = "Novo";
+}
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">Cadastro Genérico</h4>
+                <form class="needs-validation" novalidate method="post" enctype="multipart/form-data" asp-controller="Modelo" asp-action="Salvar">
+                    <input type="hidden" asp-for="Id" value="0" />
+                    <partial name="_Cadastro" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+

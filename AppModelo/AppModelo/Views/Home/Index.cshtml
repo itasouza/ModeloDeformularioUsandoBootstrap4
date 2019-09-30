@@ -1,0 +1,498 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="row p-3">
+    <div class="col-md-12 order-md-1">
+        <h4 class="mb-3">Cadastro Genérico</h4>
+
+        <form class="needs-validation" novalidate method="post" enctype="multipart/form-data" asp-controller="UploadFiles" asp-action="Index">
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo
+                    explicando o seu uso,explicando o seu uso
+                    explicando o seu uso,explicando o seu uso">
+                        <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i>
+                    </a>
+
+                    <label for="firstName">Primeiro nome</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        O primeiro nome válido é obrigatório.
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">Último nome</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        O sobrenome válido é obrigatório.
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+
+                <div class="col-md-3 mb-3">
+                    <label for="username">Nome de usuário</label>
+                    <input type="text" class="form-control" id="username" placeholder="Nome usuário" required>
+                    <div class="invalid-feedback" style="width: 100%;">
+                        Seu nome de usuário é obrigatório.
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="datanascimento">Data de Nascimento*</label>
+                    <input type="text" name="datanascimento" class="form-control datepicker" tabindex="4" id="datanascimento"
+                           required placeholder="Adicionar data" autocomplete="off">
+                    <div class="invalid-feedback">
+                        A data é obrigatório.
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="cpf">CPF do usuário</label>
+                    <input type="text" class="form-control cpf" id="cpf" placeholder="..." required>
+                    <div class="invalid-feedback" style="width: 100%;">
+                        O CPF de usuário é obrigatório.
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <label for="cnpj">CNPJ da Empresa</label>
+                    <input type="text" class="form-control cnpj" id="cnpj" placeholder="..." required>
+                    <div class="invalid-feedback" style="width: 100%;">
+                        O CNPJ da empresa é obrigatório.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+
+                <div class="col-md-4 mb-3">
+                    <label for="paisselecao">Pais</label>
+                    <select class="form-control select2-single" name="state" id="paisselecao" tabindex="-1" aria-hidden="true"
+                            required>
+                        <option></option>
+                        <option value="AK">Alaska</option>
+                        <option value="HI" disabled="disabled">Hawaii</option>
+                        <option value="CA">California</option>
+                        <option value="NV">Nevada</option>
+                        <option value="OR">Oregon</option>
+                        <option value="WA">Washington</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor selecione o pais.
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <a href="#" data-toggle="popover" title="Sobre a capital" data-content="Aqui o conteúdo sobre o campo
+                    explicando o seu uso,explicando o seu uso
+                    explicando o seu uso,explicando o seu uso">
+                        <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i>
+                    </a>
+
+                    <label for="capital">Capital</label>
+                    <select class="form-control select2-single" name="state" id="capital" tabindex="-1" aria-hidden="true"
+                            required>
+                        <option></option>
+                        <option value="AK">Alaska</option>
+                        <option value="HI" disabled="disabled">Hawaii</option>
+                        <option value="CA">California</option>
+                        <option value="NV">Nevada</option>
+                        <option value="OR">Oregon</option>
+                        <option value="WA">Washington</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor selecione a capital.
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+                    <a href="#" data-toggle="popover" title="Sobre o Continente" data-content="Aqui o conteúdo sobre o campo
+                    explicando o seu uso,explicando o seu uso
+                    explicando o seu uso,explicando o seu uso">
+                        <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i>
+                    </a>
+
+                    <label for="continente">Continente</label>
+                    <select class="form-control select2-single" name="state" id="continente" tabindex="-1" aria-hidden="true"
+                            required>
+                        <option></option>
+                        <option value="AK">Alaska</option>
+                        <option value="HI" disabled="disabled">Hawaii</option>
+                        <option value="CA">California</option>
+                        <option value="NV">Nevada</option>
+                        <option value="OR">Oregon</option>
+                        <option value="WA">Washington</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor selecione o continente.
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 mb-3">
+                    <a href="#" onclick="LimparSelect2('#atividadefisica')" data-toggle="tooltip" title="Limpar opções!">
+                        <i class="fas fa-recycle" style="font-size:20px; text-decoration:none;"></i>
+                    </a>
+
+
+                    <label for="atividadefisica">Quais Atividades você prática?</label>
+                    <select class="form-control select2-multiple" name="states[]" multiple="multiple" id="atividadefisica"
+                            tabindex="-1" aria-hidden="true" required>
+                        <option></option>
+                        <option value="01">Yoga</option>
+                        <option value="02">Ballet fitness</option>
+                        <option value="03">Crossfit</option>
+                        <option value="04">Circo</option>
+                        <option value="05">Hidroginástica</option>
+                        <option value="06">Pilates</option>
+                        <option value="07">Vôlei</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor selecione uma ou mais atividade física.
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-2 mb-3">
+                    <a href="#" data-toggle="popover" title="Buscar produto usando o código" data-content="Aqui o conteúdo sobre o campo
+                    explicando o seu uso,explicando o seu uso
+                    explicando o seu uso,explicando o seu uso">
+                        <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i>
+                    </a>
+
+                    <label for="codigoproduto">Código</label>
+                    <input type="text" class="form-control" id="codigoproduto" placeholder="..." required>
+                    <div class="invalid-feedback" style="width: 100%;">
+                        Informe o código para pesquisa.
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="codigoproduto">Nome Produto localizado</label>
+                    <input type="text" class="form-control" id="nomeproduto" disabled required>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="email">Email <span class="text-muted">(opcional)</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="seuemail@example.com">
+                    <div class="invalid-feedback">
+                        Por favor, insira um endereço de e-mail válido para atualizações de envio.
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="address">Endereço</label>
+                    <input type="text" class="form-control" id="address" placeholder="Rua Brasil 123" required>
+                    <div class="invalid-feedback">
+                        Por favor insira seu endereço de entrega.
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <label for="complemento">Complemento<span class="text-muted">(opcional)</span></label>
+                    <input type="text" class="form-control" id="complemento" placeholder="Apartamento ou suite">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" class="form-control telefone" id="telefone" placeholder="Telefone" required>
+                    <div class="invalid-feedback">
+                        Por favor informe o telefone
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="contrato">Valor do Contrato </label>
+                    <input type="text" class="form-control campovalor" id="contrato" placeholder="contrato" required>
+                    <div class="invalid-feedback">
+                        Por favor informe o valor do contrato
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+
+
+                <div class="col-md-12 mb-3">
+                    <label for="contrato"> Comentários </label>
+                    <textarea name="form-control" required name="comentario" id="editor"></textarea>
+                    <div class="invalid-feedback">
+                        Por favor adicionar um comentário
+                    </div>
+                    <div id="word-count"></div>
+                    <label class="cor-contador" for="qtdCaratere" id="resultado">Quantidade de caracteres: 0</label>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-12 mb-3">
+
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileSimples" data-toggle="tooltip"
+                               title="Selecione um arquivo" required>
+                        <label class="custom-file-label" for="customFile">Selecione um arquivo</label>
+                        <div class="invalid-feedback">
+                            Selecione um arquivo
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <div class="custom-file">
+                        <input type="file" multiple class="custom-file-input fileMultiplo" name="uploads[]" id="customFileMultiplo"
+                               data-toggle="tooltip" title="Selecione vários arquivos" required>
+                        <label class="custom-file-label" for="customFile">Selecione vários arquivos</label>
+                        <div class="invalid-feedback">
+                            Selecione um ou mais de um arquivo
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+
+                <div class="col-md-3 mb-3">
+                    <label for="cor">Selecione uma cor</label>
+                    <input type="text" class="form-control jscolor {onFineChange:'update(this)'} " id="cor" value="cc66ff"
+                           placeholder="" required>
+                    <div class="invalid-feedback">
+                        Selecione uma cor, é obrigatório
+                    </div>
+                </div>
+
+                <div class="col-md-9 mb-3">
+                    <p id="receberCor" style="border:1px solid gray; width: 100%; height: 100px;">
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+
+
+                <div class="col-md-4 mb-3">
+                    <label for="estado">Estado</label>
+                    <div class="input-group">
+                        <select class="form-control" id="estado" required>
+                            <option value="">Escolha...</option>
+                            <option>Paraíba (PB)</option>
+                            <option>Paraná (PR)</option>
+                            <option>Pernambuco (PE)</option>
+                            <option>Piauí (PI)</option>
+                            <option>Rio de Janeiro (RJ)</option>
+                            <option>Rio Grande do Norte (RN)</option>
+                            <option>Rio Grande do Sul (RS)</option>
+                            <option>Rondônia (RO)</option>
+                            <option>Roraima (RR)</option>
+                            <option>Santa Catarina (SC)</option>
+                            <option>São Paulo (SP)</option>
+                            <option>Sergipe (SE)</option>
+                            <option>Tocantins (TO)</option>
+                        </select>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text btn btn-outline-secondary pointer" id="btnAdicionar"
+                                  data-toggle="tooltip" title="Adicionar um novo estado" onclick="MostrarModal()">
+                                <i class="fas fa-plus" style="font-size:20px; text-decoration:none; color: white"></i>
+                            </span>
+                        </div>
+                        <div class="invalid-feedback">
+                            Por favor, forneça um estado.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+                    <label for="cidade">Cidade</label>
+                    <div class="input-group">
+                        <select class="form-control" id="estado" required>
+                            <option value="">Escolha...</option>
+                            <option>Brasil</option>
+                            <option>Afeganistão</option>
+                            <option>África do Sul</option>
+                            <option>Albânia</option>
+                            <option>Alemanha</option>
+                            <option>Andorra</option>
+                            <option>Angola</option>
+                            <option>Antiga e Barbuda</option>
+                            <option>Arábia Saudita</option>
+                            <option>Argélia</option>
+                            <option>Argentina</option>
+                            <option>Arménia</option>
+                            <option>Austrália</option>
+                            <option>Áustria</option>
+                            <option>Azerbaijão</option>
+                            <option>Bahamas</option>
+                            <option>Bangladexe</option>
+                            <option>Barbados</option>
+                            <option>Barém</option>
+                        </select>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text btn-outline-secondary pointer" id="btnAdicionar"
+                                  data-toggle="tooltip" title="Adicionar uma nova cidade" onclick="MostrarModal()">
+                                <i class="fas fa-plus" style="font-size:20px; text-decoration:none; color: white"></i>
+                            </span>
+                        </div>
+                        <div class="invalid-feedback">
+                            Por favor, forneça um estado.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+                    <label for="zip">CEP</label>
+                    <input type="text" class="form-control cep" id="zip" placeholder="" required>
+                    <div class="invalid-feedback">
+                        CEP requerido.
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <hr class="mb-4">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="same-address">
+                <label class="custom-control-label" for="same-address">
+                    O endereço de envio é o mesmo que o meu endereço de
+                    faturamento
+                </label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="save-info">
+                <label class="custom-control-label" for="save-info">Guarde esta informação para a próxima vez</label>
+            </div>
+            <hr class="mb-4">
+
+            <h4 class="mb-3">Forma de pagamento</h4>
+
+            <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                    <label class="custom-control-label" for="credit">Cartão de crédito</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                    <label class="custom-control-label" for="debit">Cartão de débito</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                    <label class="custom-control-label" for="paypal">PayPal</label>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <label for="intervalodata">Qual a data da sua viagem?</label>
+                    <input type="text" class="form-control" id="intervalodata" name="daterange" placeholder="" required>
+                    <small class="text-muted">Selecione um intervalo de data</small>
+                    <div class="invalid-feedback">
+                        Um intervalo de data é obrigatório
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+                    <label for="cc-name">Nome no cartão</label>
+                    <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                    <small class="text-muted">Nome completo conforme exibido no cartão</small>
+                    <div class="invalid-feedback">
+                        Nome no cartão é obrigatório
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="cc-number">Número do Cartão de Crédito</label>
+                    <input type="text" class="form-control numero-cartao" id="cc-number" placeholder="" required>
+                    <div class="invalid-feedback">
+                        O número do cartão de crédito é obrigatório
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <label for="cc-expiration">Expiração</label>
+                    <input type="text" class="form-control expiracao-cartao" id="cc-expiration" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Data de expiração exigida
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="cc-cvv">CVV</label>
+                    <input type="text" class="form-control codigo-cartao numerico" id="cc-cvv" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Código de segurança requerido
+                    </div>
+                </div>
+            </div>
+            <hr class="mb-4">
+
+            <a class="btn btn-outline-secondary mb-1 btnPersonalizado" href="https://www.google.com.br/" id="btnCancelar"
+               role="button">Cancelar</a>
+
+            <button class="btn btn-primary mb-1 btnPersonalizado alertBntsalvar" id="btnSalvar" type="submit">
+                Salvar
+            </button>
+
+            <button class="btn btn-secondary mb-1 btnPersonalizado" id="btnToast" onclick="mensagemToast()" type="submit">
+                Toast <i class="fas fa-save"></i>
+            </button>
+
+            <button class="btn btn-info mb-1 btnPersonalizado" id="btnPesquisar" type="submit">
+                Pesquisar
+                <span class="spinner-border spinner-border-sm"></span>
+            </button>
+
+            <button class="btn btn-success mb-1 btnPersonalizado" id="btn-sweetAlertSuccess" type="submit">
+                Alert de sucesso <i class="fas fa-save"></i>
+            </button>
+
+            <button class="btn btn-danger mb-1 btnPersonalizado" id="btn-sweetAlertError" type="submit">
+                Alert de error <i class="fas fa-save"></i>
+            </button>
+
+            <button class="btn btn-danger mb-1 btnPersonalizado" id="btn-sweetAlertOpcao" type="submit">
+                Alert de Opcão <i class="fas fa-save"></i>
+            </button>
+
+        </form>
+
+    </div>
+</div>

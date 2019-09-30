@@ -1,0 +1,28 @@
+﻿@model AppModelo.Dto.ModeloDto
+
+
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <a href="#" data-toggle="popover" title="Aqui o título" data-content="Aqui o conteúdo sobre o campo
+                        explicando o seu uso,explicando o seu uso
+                        explicando o seu uso,explicando o seu uso">
+            <i class="fas fa-address-book" style="font-size:20px; text-decoration:none; "></i>
+        </a>
+        <label for="firstName">Primeiro nome</label>
+        <input type="text" class="form-control" asp-for="PrimeiroNome" id="firstName" placeholder="" required>
+        <div class="invalid-feedback">
+            O primeiro nome válido é obrigatório.
+        </div>
+    </div>
+</div>
+
+<hr class="mb-4">
+
+<a class="btn btn-outline-secondary mb-1 btnPersonalizado" asp-action="index" asp-controller="Modelo" id="btnCancelar"
+   role="button">Cancelar</a>
+
+<button class="btn btn-primary mb-1 btnPersonalizado alertBntsalvar" id="btnSalvar" type="submit">
+    Salvar
+</button>
+
